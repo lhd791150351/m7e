@@ -14,6 +14,13 @@ import styles from './index.module.less';
 const videoList = [
   {
     type: 'image',
+    image: '/images/dehero.png',
+    title: '10.13',
+    link: 'https://www.dehero.co?utm_source=38',
+    linkString: 'DEHERO',
+  },
+  {
+    type: 'image',
     image: '/images/jhxq.png',
     title: '9.26',
     link: 'https://www.evolution.land/land/5/sign-in?invite=196b6f235f',
