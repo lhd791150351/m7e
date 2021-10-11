@@ -55,22 +55,31 @@ const Home: NextPage<Props> = ({ userAgent }) => {
     return '';
   };
 
+  const setActiveFun = (block) => {
+    if (isMobile) {
+      setActiveTab(block);
+      // setMobileStyle(false);
+    } else {
+      setActiveTab(block);
+    }
+    window.location.href = `#${block}`;
+  };
+
   useEffect(() => {
     const mobile = (window.innerWidth || document.body.clientWidth) < 640;
     setMobile(mobile);
     setMobileStyle(mobile);
     // if mobile tab:true
     setTab(mobile);
-  }, []);
 
-  const setActiveFun = (block) => {
-    if (isMobile) {
-      setActiveTab(block);
-      setMobileStyle(false);
-    } else {
-      setActiveTab(block);
+    if (window.location.hash.indexOf('block') !== -1) {
+      if (window.location.hash.indexOf('block6') !== -1 && !mobile) return;
+      setTimeout(() => {
+        if (!mobile) setTab(true);
+        setActiveFun(window.location.hash.substr(1));
+      }, 500);
     }
-  };
+  }, []);
 
   const onClaim = React.useCallback(() => {
     // if (!data.address) {
@@ -98,6 +107,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
       setTab(false);
       setActiveTab('');
     }
+    window.location.href = `#`;
   };
 
   function menuItemClick(index) {
@@ -259,6 +269,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#`;
             }}
           >
             Home
@@ -268,6 +279,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block2');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block2`;
             }}
           >
             MOCA Exhibition
@@ -277,6 +289,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block1');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block1`;
             }}
           >
             Highlights
@@ -286,6 +299,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block6');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block6`;
             }}
           >
             Schedule
@@ -295,6 +309,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block3');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block3`;
             }}
           >
             VIPs
@@ -304,6 +319,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block4');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block4`;
             }}
           >
             Partners
@@ -313,6 +329,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block5');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block5`;
             }}
           >
             Airdrop
@@ -433,6 +450,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block1');
+              window.location.href = `#block1`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
@@ -505,6 +523,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block2');
+              window.location.href = `#block2`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
@@ -519,6 +538,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block3');
+              window.location.href = `#block3`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
@@ -533,6 +553,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block4');
+              window.location.href = `#block4`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
