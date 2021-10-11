@@ -43,7 +43,7 @@ import support9 from '../../public/event-support/new/unnamed9.png';
 import support10 from '../../public/event-support/new/unnamed10.png';
 import support11 from '../../public/event-support/new/unnamed11.png';
 import support12 from '../../public/event-support/new/unnamed12.png';
-// import support13 from '../../public/event-support/new/unnamed13.png';
+import metaestate from '../../public/event-support/new/metaestate.png';
 import support14 from '../../public/event-support/new/unnamed14.png';
 import support15 from '../../public/event-support/new/unnamed15.png';
 import support16 from '../../public/event-support/new/unnamed16.png';
@@ -119,6 +119,7 @@ export default function partnersPartners() {
             <Card avatar={avatar8} link={''} name="Lying Gallery" />
             <Card avatar={avatar1} link={''} name="M 360" />
             <Card avatar={sponsors11} link={''} name="MetaV" />
+            <Card avatar={metaestate} link={''} name="MetaEstate" />
             <Card avatar={support6} link={''} name="MetaVenturer" />
             <Card avatar={avatar10} link={''} name="Mirror World" />
             <Card avatar={support1} link={''} name="OG Labs" />
