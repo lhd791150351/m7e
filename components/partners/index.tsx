@@ -49,6 +49,8 @@ import support15 from '../../public/event-support/new/unnamed15.png';
 import support16 from '../../public/event-support/new/unnamed16.png';
 import support17 from '../../public/event-support/new/unnamed17.png';
 import support18 from '../../public/event-support/new/unnamed18.png';
+import omarblack from '../../public/event-support/new/omarblack.png';
+import blockvita from '../../public/event-support/new/blockvita.png';
 import dg from '../../public/event-support/new/dg.png';
 import cryptomondays from '../../public/event-support/new/cryptomondays.jpeg';
 import tianmo from '../../public/event-support/new/tianmo.png';
@@ -105,6 +107,7 @@ export default function partnersPartners() {
             <Card avatar={support12} link={''} name="Arium" />
             <Card avatar={support} link={''} name="Binance" />
             <Card avatar={avatar7} link={''} name="Blocklike" />
+            <Card avatar={blockvita} link={''} name="BlockVita" />
             <Card avatar={bonnybb} link={''} name="Bonnybb.eth" />
             <Card avatar={support4} link={''} name="Caotai Music" />
             <Card avatar={cryptomondays} link={''} name="Crypto Mondays" />
@@ -118,11 +121,12 @@ export default function partnersPartners() {
             <Card avatar={support3} link={''} name="Innovation+ Art" />
             <Card avatar={avatar8} link={''} name="Lying Gallery" />
             <Card avatar={avatar1} link={''} name="M 360" />
-            <Card avatar={sponsors11} link={''} name="MetaV" />
             <Card avatar={metaestate} link={''} name="MetaEstate" />
+            <Card avatar={sponsors11} link={''} name="MetaV" />
             <Card avatar={support6} link={''} name="MetaVenturer" />
             <Card avatar={avatar10} link={''} name="Mirror World" />
             <Card avatar={support1} link={''} name="OG Labs" />
+            <Card avatar={omarblack} link={''} name="OMARBLACK" />
             <Card avatar={support11} link={''} name="OVR" />
             <Card avatar={support15} link={''} name="Sandbox" />
             <Card avatar={support14} link={''} name="Sound Blanc" />

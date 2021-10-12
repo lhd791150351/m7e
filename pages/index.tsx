@@ -25,6 +25,10 @@ import Flower1 from '../public/images/flower1.svg';
 // import Flower2 from '../public/images/flower.png';
 import HomeBg from '../public/images/home-bg.svg';
 import Ball2 from '../public/images/ball3.svg';
+
+// import { SCHEDULE_LIST } from '../common/const';
+import SCHEDULE_LIST from '../components/schdule-list';
+
 import styles from '../styles/index.module.less';
 
 interface Props {
@@ -136,91 +140,22 @@ const Home: NextPage<Props> = ({ userAgent }) => {
   const Text3 = <span className={styles.nav2}>VIPs</span>;
   const Text4 = <span className={styles.nav2}>Partners</span>;
 
-  const menuItem1 = (
-    <>
-      <div className={styles['menu-title']}>Oct 22 ~ 28</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        MOCA Exhibition in Metaverse and M50 Shanghai
-      </div>
-    </>
-  );
-  // const menuItem2 = (
-  //   <>
-  //     <div className={styles['menu-title']}>Oct 24 ~ 28</div>
-  //     <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-  //       Scavenger Hunt in Shanghai
-  //     </div>
-  //   </>
-  // );
-
-  const menuItem8 = (
-    <>
-      <div className={styles['menu-title']}>Oct 23 ~ 24</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        M50 Innovation+ Space Shanghai Super ACG Avatar Live Experience
-      </div>
-    </>
-  );
-
-  const menuItem3 = (
-    <>
-      <div className={styles['menu-title']}>Oct 22</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        ideaPod the Bund House Shanghai
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Opening Forum: Quest for Metaverse Identity
-      </div>
-    </>
-  );
-  const menuItem4 = (
-    <>
-      <div className={styles['menu-title']}>Oct 23</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        M50 Innovation+ Space Shanghai
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Harmony Meetup: When Shanghai meets Silicon Valley in Metaverse
-      </div>
-    </>
-  );
-
-  const menuItem5 = (
-    <>
-      <div className={styles['menu-title']}>Oct 24</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        M50 Innovation+ Space Shanghai
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        MyCryptoProfile Meetup
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Dataverse Meetup
-      </div>
-    </>
-  );
-  const menuItem6 = (
-    <>
-      <div className={styles['menu-title']}>Oct 28</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Metaverse
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Closing Party
-      </div>
-    </>
-  );
-  const menuItem7 = (
-    <>
-      <div className={styles['menu-title']}>Sept 29 ~ Nov 21</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Suzhou Hanshan Art Museum
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Exhibition：Avatar, My Metaverse
-      </div>
-    </>
-  );
+  const renderSchedule = () => {
+    return SCHEDULE_LIST.map((item) => {
+      return (
+        <Menu.CarouselItem>
+          <div className={styles['menu-title']}>{item.date}</div>
+          {item.eventList.map((event) => {
+            return (
+              <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
+                {event.name}
+              </div>
+            );
+          })}
+        </Menu.CarouselItem>
+      );
+    });
+  };
 
   return (
     <Page meta={meta} className={styles.bg}>
@@ -571,16 +506,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             // }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
-              <Menu>
-                <Menu.CarouselItem>{menuItem7}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem1}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem8}</Menu.CarouselItem>
-                {/* <Menu.CarouselItem>{menuItem2}</Menu.CarouselItem> */}
-                <Menu.CarouselItem>{menuItem3}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem4}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem5}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem6}</Menu.CarouselItem>
-              </Menu>
+              <Menu>{renderSchedule()}</Menu>
             </div>
           </div>
         </div>

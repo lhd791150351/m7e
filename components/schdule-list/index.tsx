@@ -1,11 +1,6 @@
-export const NAVIGATION = [];
-export const SITE_NAME_MULTILINE = ['NFT', '4', 'Metaverse'];
-export const SITE_NAME = 'Shanghai Metaverse Week 2021';
-export const SITE_URL = 'https://m7e.sh';
-export const META_DESCRIPTION = 'Shanghai Metaverse Week 2021';
-export const SITE_DESCRIPTION = 'Shanghai Metaverse Week 2021';
+import React from 'react';
 
-export const SCHEDULE_LIST = [
+export default [
   {
     date: 'Sept 15 - Oct 28',
     eventList: [
@@ -19,7 +14,7 @@ export const SCHEDULE_LIST = [
     date: 'Sept 29 - Nov 21',
     eventList: [
       {
-        name: 'Exhibition: Avatar,My Metaverse @Suzhou Hanshan Art Museum',
+        name: <span>Exhibition: Avatar,My Metaverse @Suzhou Hanshan Art Museum</span>,
         link: '',
       },
     ],
@@ -28,7 +23,17 @@ export const SCHEDULE_LIST = [
     date: 'Oct 21',
     eventList: [
       {
-        name: 'Virtual Reception of MOCA Exhibition @Decentraland',
+        name: (
+          <span>
+            Virtual Reception of MOCA Exhibition{' '}
+            <a
+              href="https://play.decentraland.org/?island=Iqmg&position=56%2C19&realm=marvel"
+              target="_blank"
+            >
+              @Decentraland
+            </a>
+          </span>
+        ),
         link: '',
       },
     ],
@@ -37,7 +42,18 @@ export const SCHEDULE_LIST = [
     date: 'Oct 22 - 28',
     eventList: [
       {
-        name: 'MOCA Exhibition: Self Awakened @Metaverse & M7E.SH & M50 Shanghai',
+        name: (
+          <span>
+            MOCA Exhibition: Self Awakened{' '}
+            <a
+              href="https://play.decentraland.org/?island=Iqmg&position=56%2C19&realm=marvel"
+              target="_blank"
+            >
+              @Metaverse
+            </a>{' '}
+            & M7E.SH & M50 Shanghai
+          </span>
+        ),
         link: '',
       },
     ],
@@ -98,7 +114,14 @@ export const SCHEDULE_LIST = [
     date: 'Oct 26',
     eventList: [
       {
-        name: 'MOCA Meetup @Somnium Space',
+        name: (
+          <span>
+            MOCA Meetup{' '}
+            <a href="https://somniumspace.com/parcel/618" target="_blank">
+              @Somnium Space
+            </a>
+          </span>
+        ),
         link: '',
       },
     ],
@@ -116,7 +139,14 @@ export const SCHEDULE_LIST = [
     date: 'Oct 28',
     eventList: [
       {
-        name: 'Closing Party @CryptoVoxels',
+        name: (
+          <span>
+            Closing Party{' '}
+            <a href="https://www.cryptovoxels.com/parcels/4875" target="_blank">
+              @CryptoVoxels
+            </a>
+          </span>
+        ),
         link: '',
       },
     ],
