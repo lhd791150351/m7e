@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { CSSProperties } from 'react';
 import classnames from 'classnames';
 import MobileDetect from 'mobile-detect';
-
-import { Carousel } from 'antd';
+import { Carousel } from 'react-responsive-carousel';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import ReactPlayer from 'react-player';
 import PageTitle from '../page-title';
 import Bullet from '../moca/Bullet';
 import Bg1 from '../../public/images/videos_bg_1.svg';
-
 import Bg2 from '../../public/images/videos_bg_2.svg';
 import styles from './index.module.less';
 
@@ -49,6 +48,14 @@ export default function Videos({ userAgent }) {
   const isM = !!md.mobile();
   const cls = classnames('flex flex-col justify-center items-start', styles.container);
   const shdowCls = classnames('flex flex-col justify-center items-start hidden', styles.container);
+  const arrowStyles: CSSProperties = {
+    position: 'absolute',
+    zIndex: 2,
+    top: '20%',
+    width: 30,
+    height: 30,
+    cursor: 'pointer',
+  };
   return (
     <div
       className="relative flex justify-center items-center w-screen h-screen bg-black"
@@ -60,32 +67,61 @@ export default function Videos({ userAgent }) {
           <Bg2 className={styles.bg2} />
           <Bg1 className={styles.bg1} />
           <div className={shdowCls}>
-            <Carousel className={styles.main} dotPosition="top" dots={{ className: styles.dot }}>
-              <div className={styles.video}>
-                <ReactPlayer
-                  controls
-                  loop
-                  playing
-                  muted
-                  width="100%"
-                  height="100%"
-                  url={''}
-                  className="w-full h-full rounded-2xl overflow-hidden"
-                />
+            <div className={styles.main}>
+              <div className={styles.slider}>
+                <div className={styles.video}>
+                  <ReactPlayer
+                    controls
+                    width="100%"
+                    height="100%"
+                    url={''}
+                    className="w-full h-full rounded-2xl overflow-hidden"
+                  />
+                </div>
+                <div className="flex flex-col text-left w-full mt-2">
+                  <div className={styles.title}>{videoList[1].title}</div>
+                  <div className={styles.description}>{videoList[1].description}</div>
+                </div>
               </div>
-            </Carousel>
-            <div className="flex flex-col text-left w-full">
-              <div className={styles.title}>{videoList[1].title}</div>
-              <div className={styles.description}>{videoList[1].description}</div>
             </div>
           </div>
         </div>
       </div>
       <div className={cls}>
-        <Carousel className={styles.main} dotPosition="top" dots={{ className: styles.dot }}>
+        <Carousel
+          className={styles.main}
+          showIndicators={true}
+          showThumbs={false}
+          showStatus={false}
+          showArrows={!isM}
+          renderArrowPrev={(onClickHandler, hasNext, label) =>
+            hasNext && (
+              <div
+                className={styles.arrow}
+                onClick={onClickHandler}
+                title={label}
+                style={{ ...arrowStyles, left: 0 }}
+              >
+                <ArrowLeftOutlined style={{ fontSize: 18, color: '#000' }} />
+              </div>
+            )
+          }
+          renderArrowNext={(onClickHandler, hasNext, label) =>
+            hasNext && (
+              <div
+                className={styles.arrow}
+                onClick={onClickHandler}
+                title={label}
+                style={{ ...arrowStyles, right: 0 }}
+              >
+                <ArrowRightOutlined style={{ fontSize: 18, color: '#000' }} />
+              </div>
+            )
+          }
+        >
           {videoList.map((item) => {
             return (
-              <div>
+              <div className={styles.slider}>
                 <div className={styles.video}>
                   <ReactPlayer
                     controls
