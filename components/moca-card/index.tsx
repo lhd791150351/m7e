@@ -104,7 +104,7 @@ export default function MocaCard({
             [styles.more]: author.length > 1,
           })}
         >
-          <a href={platformLink} className={styles.link}>
+          <a href={platformLink} className={styles.link} target="_blank">
             {platform.toLocaleUpperCase()}
           </a>
           {author.length === 1 &&
