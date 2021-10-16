@@ -75,6 +75,7 @@ import geekpark from '../../public/media-support/geekpark.png';
 import jiemiannews from '../../public/media-support/jiemiannews.png';
 import eightbit from '../../public/media-support/media1.png';
 import xiyuecaijing from '../../public/media/xiyuecaijing.png';
+import sc from '../../public/partners-logo/new/Semicolon C.png';
 
 import styles from './index.module.less';
 
@@ -127,7 +128,7 @@ const LIST = [
       { avatar: bonnybb, link: '', name: 'Bonnybb.eth' },
       { avatar: metacat, link: '', name: 'MetaCat' },
       { avatar: support17, link: '', name: 'Super ACG' },
-      { avatar, link: '', name: 'Semicolon C' },
+      { avatar: sc, link: '', name: 'Semicolon C' },
       { avatar: support3, link: '', name: 'Innovation+ Art' },
       { avatar: tianmo, link: '', name: 'Talent mart' },
     ],
