@@ -21,6 +21,12 @@ const videoList = [
       'Self-sovereign identities and avatars are the prerequisites and first-class assets for people to enter the metaverse to work, live and play freely in future…',
   },
   {
+    video: 'https://www.youtube.com/watch?v=zIS5cob8u10',
+    title: 'Litentry&MCP: Embracing New Identity in Web3',
+    description:
+      'In this episode, Litentry CPO Lilly M. Dobreva will introduce Litentry‘s product My Crypto Profile, while explaining her experience in blockchain industry, and why we need digital identity and how will it prepare us for Metaverse.',
+  },
+  {
     video:
       'http://1500006270.vod2.myqcloud.com/6c9ac477vodcq1500006270/9c51ac823701925925598037101/playlist.f9.mp4',
     title: "What's the magic between data and NFT?",

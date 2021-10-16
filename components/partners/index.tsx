@@ -73,6 +73,7 @@ import jazzyear from '../../public/media-support/media6.png';
 import tmtpost from '../../public/media-support/media21.png';
 import geekpark from '../../public/media-support/geekpark.png';
 import jiemiannews from '../../public/media-support/jiemiannews.png';
+import eightbit from '../../public/media-support/media1.png';
 
 import styles from './index.module.less';
 
@@ -201,6 +202,7 @@ const LIST = [
       { avatar: tuoluocaijing, link: '', name: 'tuoluocaijing' },
       { avatar: tangent, link: '', name: 'TANGENT' },
       { avatar: orangepaper, link: '', name: 'orangepaper' },
+      { avatar: eightbit, link: '', name: '巴比特' },
     ],
   },
   {
