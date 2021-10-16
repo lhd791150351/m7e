@@ -74,6 +74,7 @@ import tmtpost from '../../public/media-support/media21.png';
 import geekpark from '../../public/media-support/geekpark.png';
 import jiemiannews from '../../public/media-support/jiemiannews.png';
 import eightbit from '../../public/media-support/media1.png';
+import xiyuecaijing from '../../public/media/xiyuecaijing.png';
 
 import styles from './index.module.less';
 
@@ -126,6 +127,7 @@ const LIST = [
       { avatar: bonnybb, link: '', name: 'Bonnybb.eth' },
       { avatar: metacat, link: '', name: 'MetaCat' },
       { avatar: support17, link: '', name: 'Super ACG' },
+      { avatar, link: '', name: 'Semicolon C' },
       { avatar: support3, link: '', name: 'Innovation+ Art' },
       { avatar: tianmo, link: '', name: 'Talent mart' },
     ],
@@ -135,8 +137,8 @@ const LIST = [
     list: [
       { avatar: support8, link: '', name: 'Crypto Playground' },
       { avatar: avatar1, link: '', name: 'M360' },
-      { avatar: avatar11, link: '', name: 'Next Scene' },
       { avatar: hotneutrostudio, link: '', name: 'Hot Neutron Studio' },
+      { avatar: avatar11, link: '', name: 'Next Scene' },
     ],
   },
   {
@@ -158,6 +160,7 @@ const LIST = [
       { avatar: support12, link: '', name: 'Arium' },
       { avatar: cesme, link: '', name: 'CESM' },
       { avatar: artgee, link: '', name: 'ArtGee' },
+      { avatar: sponsors5, link: '', name: 'da Vinci' },
     ],
   },
   {
@@ -203,6 +206,7 @@ const LIST = [
       { avatar: tangent, link: '', name: 'TANGENT' },
       { avatar: orangepaper, link: '', name: 'orangepaper' },
       { avatar: eightbit, link: '', name: '巴比特' },
+      { avatar: xiyuecaijing, link: '', name: '禧钥财经' },
     ],
   },
   {
