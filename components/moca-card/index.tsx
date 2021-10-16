@@ -83,16 +83,16 @@ export default function MocaCard({
           {author.map((item, i) => {
             if (i === 1) {
               return (
-                <>
+                <React.Fragment key={item}>
                   <span className={styles.x}>x</span>
                   <a href={twitter[i]} className={styles.link} target="_blank">
                     {item}
                   </a>
-                </>
+                </React.Fragment>
               );
             }
             return (
-              <a href={twitter[i]} className={styles.link} target="_blank">
+              <a href={twitter[i]} className={styles.link} target="_blank" key={item}>
                 {item}
               </a>
             );

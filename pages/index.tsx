@@ -4,7 +4,6 @@ import MobileDetect from 'mobile-detect';
 import classnames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import AutoAudioPlayer from '../components/auto-audio-player';
 import Page from '../components/page';
 import NavBox from '../components/nav-box';
 import Menu from '../components/menu-carousel';
@@ -163,21 +162,6 @@ const Home: NextPage<Props> = ({ userAgent }) => {
 
   return (
     <Page meta={meta} className={styles.bg}>
-      {/* <ReactPlayer
-        url="/media/galaxy-fragments.mp3"
-        onReady={() => {
-          setTimeout(() => {
-            setMusicPlaying(true);
-          }, 1000);
-          // setMusicPlaying(true);
-        }}
-        // loop
-        playing={musicPlaying}
-        style={{ position: 'fixed', zIndex: 9999 }}
-        controls
-      /> */}
-      {/* <ReactAudioPlayer src="/media/galaxy-fragments.mp3" autoPlay loop /> */}
-      <AutoAudioPlayer />
       <div
         className={classnames({
           [styles.menu]: isMobile,
