@@ -8,15 +8,14 @@ export default function AutoAudioPlayer() {
   };
 
   React.useEffect(() => {
-    const r = window.confirm('Would You Like To Play Background Music?');
-    if (r) {
+    document.addEventListener('click', () => {
       play();
-    }
+    });
   }, [null]);
 
   return (
     <div style={{ display: 'none' }}>
-      <audio ref={musicRef} loop>
+      <audio ref={musicRef} loop autoPlay>
         <source src="/media/galaxy-fragments.mp3" type="audio/mp3" />
       </audio>
     </div>
