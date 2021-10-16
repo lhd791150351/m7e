@@ -3,6 +3,8 @@ import { NextPage } from 'next';
 import MobileDetect from 'mobile-detect';
 import classnames from 'classnames';
 import { useTranslations } from 'next-intl';
+
+import AutoAudioPlayer from '../components/auto-audio-player';
 import Page from '../components/page';
 import NavBox from '../components/nav-box';
 import Menu from '../components/menu-carousel';
@@ -14,20 +16,17 @@ import Speakers from '../components/speakers';
 import Claim from '../components/claim';
 import Activity1 from '../components/activity1';
 import Activity2 from '../components/activity2';
-import PreMoca from '../components/pre-moca';
+import SCHEDULE_LIST from '../components/schdule-list';
 import Schedule from '../components/schedule';
 import { SITE_NAME, META_DESCRIPTION } from '../common/const';
+
 import Icon1 from '../public/images/icon_1.svg';
 import Icon2 from '../public/images/icon_2.svg';
 import Icon3 from '../public/images/icon_3.svg';
 import Icon4 from '../public/images/icon_4.svg';
 import Flower1 from '../public/images/flower1.svg';
-// import Flower2 from '../public/images/flower.png';
 import HomeBg from '../public/images/home-bg.svg';
 import Ball2 from '../public/images/ball3.svg';
-
-// import { SCHEDULE_LIST } from '../common/const';
-import SCHEDULE_LIST from '../components/schdule-list';
 
 import styles from '../styles/index.module.less';
 
@@ -45,6 +44,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
     description: META_DESCRIPTION,
   };
 
+  const [musicPlaying, setMusicPlaying] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
   const [blockContro, setBlockContro] = useState(false);
   const [isMobile, setMobile] = useState(isM);
@@ -163,6 +163,21 @@ const Home: NextPage<Props> = ({ userAgent }) => {
 
   return (
     <Page meta={meta} className={styles.bg}>
+      {/* <ReactPlayer
+        url="/media/galaxy-fragments.mp3"
+        onReady={() => {
+          setTimeout(() => {
+            setMusicPlaying(true);
+          }, 1000);
+          // setMusicPlaying(true);
+        }}
+        // loop
+        playing={musicPlaying}
+        style={{ position: 'fixed', zIndex: 9999 }}
+        controls
+      /> */}
+      {/* <ReactAudioPlayer src="/media/galaxy-fragments.mp3" autoPlay loop /> */}
+      <AutoAudioPlayer />
       <div
         className={classnames({
           [styles.menu]: isMobile,
