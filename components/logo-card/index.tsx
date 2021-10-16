@@ -20,7 +20,7 @@ export default function Card({ link, avatar, name, cnName, className, ...props }
         <div className={styles.bg1}>
           <LogoBg className={styles['bg1-img']} />
           <div className={styles['avatar-box']}>
-            <Image className={styles.avatar} src={avatar} layout="fill" alt="avatar" unoptimized />
+            <Image className={styles.avatar} src={avatar} layout="fill" alt="avatar" />
           </div>
         </div>
         <div className={styles.bottom}>
@@ -38,7 +38,7 @@ export default function Card({ link, avatar, name, cnName, className, ...props }
       <div className={styles.bg1}>
         <LogoBg className={styles['bg1-img']} />
         <div className={styles['avatar-box']}>
-          <Image className={styles.avatar} src={avatar} layout="fill" alt="avatar" unoptimized />
+          <Image className={styles.avatar} src={avatar} layout="fill" alt="avatar" />
         </div>
       </div>
       <div className={styles.bottom}>
