@@ -39,10 +39,123 @@ import jessie from '../../public/speakers-logo/Jessie Founder of fat-garage.com 
 import jo from '../../public/speakers-logo/Jo Founder of Crypto Playground.jpeg';
 import maryMa from '../../public/speakers-logo/Mary Ma，Co-founder of Rangers Protocol.png';
 import stephen from '../../public/speakers-logo/Stephen CTO of UTU.jpeg';
+import ethan from '../../public/speakers-logo/Ethan， co-founder，Meet Another you in VR World.jpeg';
+import kant from '../../public/speakers-logo/Kant NASH Metaverse Founder.jpeg';
+import leo from '../../public/speakers-logo/Leo Chen VP of Engineering of Harmony.jpeg';
+import navigator from '../../public/speakers-logo/Navigator Decentrland Navigator.jpeg';
+import sun from '../../public/speakers-logo/Sun NASH Metaverse Co-Founder.jpeg';
 
 import styles from './index.module.less';
 
 const LIST = [
+  {
+    avatar: avatar17,
+    name: 'Skygolpe',
+  },
+  {
+    avatar: avatar8,
+    name: 'Baiwei',
+  },
+  {
+    avatar: avatar13,
+    name: 'Sparrow',
+  },
+  {
+    avatar: avatar11,
+    name: 'Rutger Van Der Tas',
+  },
+  {
+    avatar: avatar15,
+    name: 'Olive Allen',
+  },
+  {
+    avatar: avatar19,
+    name: 'Milton Sanz',
+  },
+  {
+    avatar: avatar18,
+    name: 'Luluxxd',
+  },
+  {
+    avatar: avatar21,
+    name: 'Killer Acid',
+  },
+  {
+    avatar: avatar20,
+    name: 'Jay Delay',
+  },
+  {
+    avatar: avatar16,
+    name: 'Facu',
+  },
+  {
+    avatar,
+    name: 'Fabin Rasheed',
+  },
+  {
+    avatar: avatar14,
+    name: 'Debbie Digital',
+  },
+  {
+    avatar: avatar12,
+    name: 'Arc4g',
+  },
+  {
+    avatar: avatar7,
+    name: 'XIx',
+  },
+  {
+    avatar: avatar10,
+    name: 'Ton ran',
+  },
+  {
+    avatar: avatar5,
+    name: 'TingSong',
+  },
+  {
+    avatar: avatar3,
+    name: 'Sleepy',
+  },
+  {
+    avatar: avatar9,
+    name: 'Rinii fish',
+  },
+  {
+    avatar: avatar6,
+    name: 'metaSynth',
+  },
+  {
+    avatar: avatar4,
+    name: 'Reva',
+  },
+  {
+    avatar: avatar1,
+    name: 'Niq',
+  },
+  {
+    avatar: avatar2,
+    name: 'IOYOI',
+  },
+  {
+    avatar: sun,
+    name: 'Sun NASH Metaverse Co-Founder',
+  },
+  {
+    avatar: navigator,
+    name: 'Navigator, Navigator @Decentrland',
+  },
+  {
+    avatar: leo,
+    name: 'Leo Chen, VP Engineering @Harmony',
+  },
+  {
+    avatar: kant,
+    name: 'Kant, Founder @NASH Metaverse',
+  },
+  {
+    avatar: ethan,
+    name: 'Ethan, Co-founder @Meet Another you in VR World',
+  },
   {
     avatar: chw,
     name: '程翰文, CEO @Litentry',
@@ -99,7 +212,7 @@ const LIST = [
     avatar: stephen,
     name: 'Stephen, CTO @UTU',
   },
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function Speakers() {
   const cls = classnames(styles.container);
@@ -111,28 +224,9 @@ export default function Speakers() {
       <PageTitle title="VIPs" />
       <div className={cls}>
         <div className="grid grid-cols-2 lg:grid-cols-4">
-          <Card avatar={avatar8} name="Baiwei" />
-          <Card avatar={avatar2} name="IOYOI" />
-          <Card avatar={avatar6} name="metaSynth" />
-          <Card avatar={avatar1} name="Niq" />
-          <Card avatar={avatar4} name="Reva" />
-          <Card avatar={avatar9} name="Rinii fish" />
-          <Card avatar={avatar3} name="Sleepy" />
-          <Card avatar={avatar5} name="TingSong" />
-          <Card avatar={avatar10} name="Ton ran" />
-          <Card avatar={avatar7} name="XIx" />
-          <Card avatar={avatar12} name="Arc4g" />
-          <Card avatar={avatar14} name="Debbie Digital" />
-          <Card avatar={avatar} name="Fabin Rasheed" />
-          <Card avatar={avatar16} name="Facu" />
-          <Card avatar={avatar20} name="Jay Delay" />
-          <Card avatar={avatar21} name="Killer Acid" />
-          <Card avatar={avatar18} name="Luluxx" />
-          <Card avatar={avatar19} name="Milton Sanz" />
-          <Card avatar={avatar15} name="Olive Allen" />
-          <Card avatar={avatar11} name="Rutger Van Der Tas" />
-          <Card avatar={avatar17} name="Skygolpe" />
-          <Card avatar={avatar13} name="Sparrow" />
+          {LIST.map((item) => (
+            <Card key={item.name} avatar={item.avatar} name={item.name} />
+          ))}
         </div>
         <div className={styles.text}>
           <div>* The above VIP list will be updated at any time</div>

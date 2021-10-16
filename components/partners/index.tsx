@@ -232,13 +232,20 @@ export default function partnersPartners() {
       <div className={cls}>
         {LIST.map((item) => {
           return (
-            <div className={styles.box}>
+            <div className={styles.box} key={item.title}>
               <h4 className={`${styles.title} text-left text-white fonts-kumar-one mt-40`}>
                 {item.title}
               </h4>
               <div className="grid grid-cols-2 lg:grid-cols-5">
                 {item.list.map((partner) => {
-                  return <Card avatar={partner.avatar} link={partner.link} name={partner.name} />;
+                  return (
+                    <Card
+                      key={partner.name}
+                      avatar={partner.avatar}
+                      link={partner.link}
+                      name={partner.name}
+                    />
+                  );
                 })}
               </div>
             </div>

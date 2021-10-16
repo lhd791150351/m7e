@@ -141,13 +141,17 @@ const Home: NextPage<Props> = ({ userAgent }) => {
   const Text4 = <span className={styles.nav2}>Partners</span>;
 
   const renderSchedule = () => {
-    return SCHEDULE_LIST.map((item) => {
+    return SCHEDULE_LIST.map((item, idx) => {
       return (
-        <Menu.CarouselItem>
+        <Menu.CarouselItem key={idx}>
           <div className={styles['menu-title']}>{item.date}</div>
           {item.eventList.map((event) => {
             return (
-              <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
+              <div
+                key={event.name}
+                className={styles['menu-item']}
+                onClick={() => menuItemClick(0)}
+              >
                 {event.name}
               </div>
             );
