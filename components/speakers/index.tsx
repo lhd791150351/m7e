@@ -45,10 +45,35 @@ import leo from '../../public/speakers-logo/Leo Chen VP of Engineering of Harmon
 import navigator from '../../public/speakers-logo/Navigator Decentrland Navigator.jpeg';
 import sun from '../../public/speakers-logo/Sun NASH Metaverse Co-Founder.jpeg';
 import stella from '../../public/speakers-logo/Stella, Head of Asia, MetaV.jpeg';
+import caoyin from '../../public/speakers-logo/CAOYIN£¬MANAGING DIRECTOR£¬ DIGITAL RENAISSANCE FOUNDATION.jpg';
+import chenyuetian from '../../public/speakers-logo/CHENYUETIAN, FOUNDER of HUOFENGCaptial.jpg';
+import ck from '../../public/speakers-logo/ck, Cryptoart Collector, Founder of CV Analytics.jpg';
+import emmaHu from '../../public/speakers-logo/EmmaHu, ART DIRECTOR of CryptoC & WaveC.jpg';
+import gabby from '../../public/speakers-logo/Gabby Dizon£¬Co-Founde of YGG.jpg';
+import gzq from '../../public/speakers-logo/GuZhenqing,Curator and art critic of Chinese contemporary art.jpg';
+import huangheshan from '../../public/speakers-logo/huangheshan,Designer & Artist,Author of tulifu.jpg';
+import nova from '../../public/speakers-logo/NOVA,Producer of Rivermen NFT, Chairman of Cthu&NA administration Conference.jpg';
+import songjiaji from '../../public/speakers-logo/SONGJIAJI,Head of GUOSHENG BLOCKCHIAN INSTITUATE.jpg';
+import tanghan from '../../public/speakers-logo/Tanghan,founder of CryptoC & WaveC.jpg';
+import william from '../../public/speakers-logo/William Pucs,founder of THING.FUND.png';
 
 import styles from './index.module.less';
 
 const LIST = [
+  { avatar: william, name: 'William Pucs, Founder @THING.FUND' },
+  { avatar: tanghan, name: 'Tanghan, Founder @CryptoC & WaveC' },
+  { avatar: songjiaji, name: 'SONGJIAJI, Head @GUOSHENG BLOCKCHIAN INSTITUATE' },
+  {
+    avatar: nova,
+    name: 'NOVA, Producer @Rivermen NFT, Chairman @Cthu&NA administration Conference',
+  },
+  { avatar: huangheshan, name: 'HuangHeshan, Designer & Artist, Author @tulifu' },
+  { avatar: gzq, name: 'GuZhenqing, Curator and art critic @Chinese contemporary art' },
+  { avatar: gabby, name: 'Gabby Dizon£, Co-Founde @YGG' },
+  { avatar: emmaHu, name: 'EmmaHu, ART DIRECTOR @CryptoC & WaveC' },
+  { avatar: ck, name: 'ck, Cryptoart Collector, Founder @CV Analytics' },
+  { avatar: chenyuetian, name: 'CHENYUETIAN, FOUNDER @HUOFENGCaptial' },
+  { avatar: caoyin, name: 'CAOYIN£, MANAGING DIRECTOR£ @DIGITAL RENAISSANCE FOUNDATION' },
   {
     avatar: stella,
     name: 'Stella, Head of Asia @MetaV',
