@@ -44,10 +44,15 @@ import kant from '../../public/speakers-logo/Kant NASH Metaverse Founder.jpeg';
 import leo from '../../public/speakers-logo/Leo Chen VP of Engineering of Harmony.jpeg';
 import navigator from '../../public/speakers-logo/Navigator Decentrland Navigator.jpeg';
 import sun from '../../public/speakers-logo/Sun NASH Metaverse Co-Founder.jpeg';
+import stella from '../../public/speakers-logo/Stella, Head of Asia, MetaV.jpeg';
 
 import styles from './index.module.less';
 
 const LIST = [
+  {
+    avatar: stella,
+    name: 'Stella, Head of Asia @MetaV',
+  },
   {
     avatar: avatar17,
     name: 'Skygolpe',
@@ -170,7 +175,7 @@ const LIST = [
   },
   {
     avatar: amber,
-    name: 'Amber, head of China @Dapper Labs',
+    name: 'Amber, Head of Asia @Dapper Labs',
   },
   {
     avatar: carlHuang,
