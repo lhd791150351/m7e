@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import MobileDetect from 'mobile-detect';
 import classnames from 'classnames';
 import { useTranslations } from 'next-intl';
+
 import Page from '../components/page';
 import NavBox from '../components/nav-box';
 import Menu from '../components/menu-carousel';
@@ -14,17 +15,18 @@ import Speakers from '../components/speakers';
 import Claim from '../components/claim';
 import Activity1 from '../components/activity1';
 import Activity2 from '../components/activity2';
-import PreMoca from '../components/pre-moca';
+import SCHEDULE_LIST from '../components/schdule-list';
 import Schedule from '../components/schedule';
 import { SITE_NAME, META_DESCRIPTION } from '../common/const';
+
 import Icon1 from '../public/images/icon_1.svg';
 import Icon2 from '../public/images/icon_2.svg';
 import Icon3 from '../public/images/icon_3.svg';
 import Icon4 from '../public/images/icon_4.svg';
 import Flower1 from '../public/images/flower1.svg';
-// import Flower2 from '../public/images/flower.png';
 import HomeBg from '../public/images/home-bg.svg';
 import Ball2 from '../public/images/ball3.svg';
+
 import styles from '../styles/index.module.less';
 
 interface Props {
@@ -41,6 +43,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
     description: META_DESCRIPTION,
   };
 
+  const [musicPlaying, setMusicPlaying] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
   const [blockContro, setBlockContro] = useState(false);
   const [isMobile, setMobile] = useState(isM);
@@ -55,22 +58,31 @@ const Home: NextPage<Props> = ({ userAgent }) => {
     return '';
   };
 
+  const setActiveFun = (block) => {
+    if (isMobile) {
+      setActiveTab(block);
+      // setMobileStyle(false);
+    } else {
+      setActiveTab(block);
+    }
+    window.location.href = `#${block}`;
+  };
+
   useEffect(() => {
     const mobile = (window.innerWidth || document.body.clientWidth) < 640;
     setMobile(mobile);
     setMobileStyle(mobile);
     // if mobile tab:true
     setTab(mobile);
-  }, []);
 
-  const setActiveFun = (block) => {
-    if (isMobile) {
-      setActiveTab(block);
-      setMobileStyle(false);
-    } else {
-      setActiveTab(block);
+    if (window.location.hash.indexOf('block') !== -1) {
+      if (window.location.hash.indexOf('block6') !== -1 && !mobile) return;
+      setTimeout(() => {
+        if (!mobile) setTab(true);
+        setActiveFun(window.location.hash.substr(1));
+      }, 500);
     }
-  };
+  }, []);
 
   const onClaim = React.useCallback(() => {
     // if (!data.address) {
@@ -98,6 +110,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
       setTab(false);
       setActiveTab('');
     }
+    window.location.href = `#`;
   };
 
   function menuItemClick(index) {
@@ -126,117 +139,26 @@ const Home: NextPage<Props> = ({ userAgent }) => {
   const Text3 = <span className={styles.nav2}>VIPs</span>;
   const Text4 = <span className={styles.nav2}>Partners</span>;
 
-  const menuItem = (
-    <>
-      <div className={styles['menu-title']}>Sept 15 ~ Oct 28</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        NFT Airdrop & Claim on M7E.SH
-      </div>
-    </>
-  );
-  const menuItem1 = (
-    <>
-      <div className={styles['menu-title']}>Oct 22 ~ 28</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        MOCA Exhibition in Metaverse adn M50 Shanghai
-      </div>
-    </>
-  );
-  const menuItem2 = (
-    <>
-      <div className={styles['menu-title']}>Oct 24 ~ 28</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        NFT Scavenger Hunt in Shanghai
-      </div>
-    </>
-  );
-
-  const menuItem8 = (
-    <>
-      <div className={styles['menu-title']}>Oct 23 ~ 24</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        M50 Innovation+ Space Shanghai Super ACG Avatar Live Experience
-      </div>
-    </>
-  );
-
-  const menuItem3 = (
-    <>
-      <div className={styles['menu-title']}>Oct 22</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        ideaPod the Bund House Shanghai
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Opening Forum: Quest for Metaverse Identity
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Polygon & FileCoin MetaVerse 酒会 @ 上海Dream Reality空间
-      </div>
-    </>
-  );
-  const menuItem4 = (
-    <>
-      <div className={styles['menu-title']}>Oct 23</div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        AM, M50 Innovation+ Space Shanghai
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        Harmony Meetup: When Shanghai meets Silicon Valley in Metaverse
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        PM, M50 Innovation+ Space Shanghai
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        NFT Avatar Carnival
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        Night, M50 Innovation+ Space Shanghai
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        Polygon Ecosystem Metaverse Night
-      </div>
-    </>
-  );
-
-  const menuItem5 = (
-    <>
-      <div className={styles['menu-title']}>Oct 24</div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        M50 Innovation+ Space Shanghai
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        Partners Meetups
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        Night, ideaPod the Bund House Shanghai
-      </div>
-      <div className={styles['menu-item-23']} onClick={() => menuItemClick(0)}>
-        Metaverse Cocktail: Quest for Metaverse Identity by MyCrptoProfile & Dataverse
-      </div>
-    </>
-  );
-  const menuItem6 = (
-    <>
-      <div className={styles['menu-title']}>Oct 28</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Night, Metaverse
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Closing Party
-      </div>
-    </>
-  );
-  const menuItem7 = (
-    <>
-      <div className={styles['menu-title']}>Sept 29 ~ Nov 21</div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Suzhou Hanshan Art Museum
-      </div>
-      <div className={styles['menu-item']} onClick={() => menuItemClick(0)}>
-        Exhibition：Avatar, My Metaverse
-      </div>
-    </>
-  );
+  const renderSchedule = () => {
+    return SCHEDULE_LIST.map((item, idx) => {
+      return (
+        <Menu.CarouselItem key={idx}>
+          <div className={styles['menu-title']}>{item.date}</div>
+          {item.eventList.map((event) => {
+            return (
+              <div
+                key={event.name}
+                className={styles['menu-item']}
+                onClick={() => menuItemClick(0)}
+              >
+                {event.name}
+              </div>
+            );
+          })}
+        </Menu.CarouselItem>
+      );
+    });
+  };
 
   return (
     <Page meta={meta} className={styles.bg}>
@@ -285,6 +207,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#`;
             }}
           >
             Home
@@ -294,6 +217,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block2');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block2`;
             }}
           >
             MOCA Exhibition
@@ -303,6 +227,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block1');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block1`;
             }}
           >
             Highlights
@@ -312,6 +237,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block6');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block6`;
             }}
           >
             Schedule
@@ -321,6 +247,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block3');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block3`;
             }}
           >
             VIPs
@@ -330,6 +257,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block4');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block4`;
             }}
           >
             Partners
@@ -339,6 +267,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               setActiveTab('block5');
               setMenuActive(false);
               setBlockContro(false);
+              window.location.href = `#block5`;
             }}
           >
             Airdrop
@@ -459,6 +388,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block1');
+              window.location.href = `#block1`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
@@ -495,9 +425,6 @@ const Home: NextPage<Props> = ({ userAgent }) => {
                   <Flower1 className={styles.flower1} />
                   <div className="flex flex-col items-end flex-1">
                     <div className={styles['home-text1']}>Shanghai Metaverse Week</div>
-                    <div style={{ transform: 'translateY(-15%)' }} className={styles['home-text2']}>
-                      上海元宇宙文化周
-                    </div>
                     <div className={styles['home-text2']}>10.22 - 10.28</div>
                   </div>
                 </div>
@@ -534,6 +461,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block2');
+              window.location.href = `#block2`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
@@ -548,6 +476,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block3');
+              window.location.href = `#block3`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
@@ -562,6 +491,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             onClick={() => {
               setTab(true);
               setActiveTab('block4');
+              window.location.href = `#block4`;
             }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
@@ -579,17 +509,7 @@ const Home: NextPage<Props> = ({ userAgent }) => {
             // }}
           >
             <div className={styles.mini} style={{ width: '100%', height: '100%' }}>
-              <Menu>
-                <Menu.CarouselItem>{menuItem}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem7}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem1}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem8}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem2}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem3}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem4}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem5}</Menu.CarouselItem>
-                <Menu.CarouselItem>{menuItem6}</Menu.CarouselItem>
-              </Menu>
+              <Menu>{renderSchedule()}</Menu>
             </div>
           </div>
         </div>

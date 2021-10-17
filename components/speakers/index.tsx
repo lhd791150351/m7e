@@ -25,7 +25,199 @@ import avatar19 from '../../public/speakers-logo/unnamed19.png';
 import avatar20 from '../../public/speakers-logo/jay_delay.png';
 import avatar21 from '../../public/speakers-logo/killer_acid .png';
 
+import chw from '../../public/speakers-logo/程翰文  Litentry 创始人_CEO.jpg';
+import jackey from '../../public/speakers-logo/姜超 Jackey MetaEstate联合创始人.jpeg';
+import mss from '../../public/speakers-logo/三水 Mask Network 市场负责人.jpeg';
+import amber from '../../public/speakers-logo/Amber, head of China, Dapper Labs.jpeg';
+import carlHuang from '../../public/speakers-logo/Carl Huang Follow协议创始人.jpeg';
+import charlieHu from '../../public/speakers-logo/Charlie Hu Polygon Head of South East Asia.jpeg';
+import christineQian from '../../public/speakers-logo/Christine Qian Founder of M360.jpeg';
+import colborn from '../../public/speakers-logo/colborn.glil.jpeg';
+import diana from '../../public/speakers-logo/Diana VP of Community UTU.jpeg';
+import hainaLyu from '../../public/speakers-logo/Haina Lyu, Cofounder _ Head of Creative,The ea + Partners.png';
+import jessie from '../../public/speakers-logo/Jessie Founder of fat-garage.com memester for dataverse.jpg';
+import jo from '../../public/speakers-logo/Jo Founder of Crypto Playground.jpeg';
+import maryMa from '../../public/speakers-logo/Mary Ma，Co-founder of Rangers Protocol.png';
+import stephen from '../../public/speakers-logo/Stephen CTO of UTU.jpeg';
+import ethan from '../../public/speakers-logo/Ethan， co-founder，Meet Another you in VR World.jpeg';
+import kant from '../../public/speakers-logo/Kant NASH Metaverse Founder.jpeg';
+import leo from '../../public/speakers-logo/Leo Chen VP of Engineering of Harmony.jpeg';
+import navigator from '../../public/speakers-logo/Navigator Decentrland Navigator.jpeg';
+import sun from '../../public/speakers-logo/Sun NASH Metaverse Co-Founder.jpeg';
+import stella from '../../public/speakers-logo/Stella, Head of Asia, MetaV.jpeg';
+
 import styles from './index.module.less';
+
+const LIST = [
+  {
+    avatar: stella,
+    name: 'Stella, Head of Asia @MetaV',
+  },
+  {
+    avatar: avatar17,
+    name: 'Skygolpe',
+  },
+  {
+    avatar: avatar8,
+    name: 'Baiwei',
+  },
+  {
+    avatar: avatar13,
+    name: 'Sparrow',
+  },
+  {
+    avatar: avatar11,
+    name: 'Rutger Van Der Tas',
+  },
+  {
+    avatar: avatar15,
+    name: 'Olive Allen',
+  },
+  {
+    avatar: avatar19,
+    name: 'Milton Sanz',
+  },
+  {
+    avatar: avatar18,
+    name: 'Luluxxd',
+  },
+  {
+    avatar: avatar21,
+    name: 'Killer Acid',
+  },
+  {
+    avatar: avatar20,
+    name: 'Jay Delay',
+  },
+  {
+    avatar: avatar16,
+    name: 'Facu',
+  },
+  {
+    avatar,
+    name: 'Fabin Rasheed',
+  },
+  {
+    avatar: avatar14,
+    name: 'Debbie Digital',
+  },
+  {
+    avatar: avatar12,
+    name: 'Arc4g',
+  },
+  {
+    avatar: avatar7,
+    name: 'XIx',
+  },
+  {
+    avatar: avatar10,
+    name: 'Ton ran',
+  },
+  {
+    avatar: avatar5,
+    name: 'TingSong',
+  },
+  {
+    avatar: avatar3,
+    name: 'Sleepy',
+  },
+  {
+    avatar: avatar9,
+    name: 'Rinii fish',
+  },
+  {
+    avatar: avatar6,
+    name: 'metaSynth',
+  },
+  {
+    avatar: avatar4,
+    name: 'Reva',
+  },
+  {
+    avatar: avatar1,
+    name: 'Niq',
+  },
+  {
+    avatar: avatar2,
+    name: 'IOYOI',
+  },
+  {
+    avatar: sun,
+    name: 'Sun NASH Metaverse Co-Founder',
+  },
+  {
+    avatar: navigator,
+    name: 'Navigator, Navigator @Decentrland',
+  },
+  {
+    avatar: leo,
+    name: 'Leo Chen, VP Engineering @Harmony',
+  },
+  {
+    avatar: kant,
+    name: 'Kant, Founder @NASH Metaverse',
+  },
+  {
+    avatar: ethan,
+    name: 'Ethan, Co-founder @Meet Another you in VR World',
+  },
+  {
+    avatar: chw,
+    name: '程翰文, CEO @Litentry',
+  },
+  {
+    avatar: jackey,
+    name: 'Jackey, Co-founder @MetaEstate',
+  },
+  {
+    avatar: mss,
+    name: '三水, CMO @Mask Network',
+  },
+  {
+    avatar: amber,
+    name: 'Amber, Head of Asia @Dapper Labs',
+  },
+  {
+    avatar: carlHuang,
+    name: 'Carl Huang, Founder @Follow',
+  },
+  {
+    avatar: charlieHu,
+    name: 'Charlie Hu, Head of South East Asia @Polygon',
+  },
+  {
+    avatar: christineQian,
+    name: 'Christine Qian, Founder @M360',
+  },
+  {
+    avatar: colborn,
+    name: 'Colborn, Founder @MOCA',
+  },
+  {
+    avatar: diana,
+    name: 'Diana, VP @Community UTU',
+  },
+  {
+    avatar: hainaLyu,
+    name: 'Haina Lyu, Co-founder, Head of Creative @The ea + Partners',
+  },
+  {
+    avatar: jessie,
+    name: 'Jessie, Founder @fat-garage.com, memester @Dataverse',
+  },
+  {
+    avatar: jo,
+    name: 'Jo, Founder @Crypto Playground',
+  },
+  {
+    avatar: maryMa,
+    name: 'Mary Ma，Co-founder @Rangers Protocol',
+  },
+  {
+    avatar: stephen,
+    name: 'Stephen, CTO @UTU',
+  },
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function Speakers() {
   const cls = classnames(styles.container);
@@ -37,32 +229,12 @@ export default function Speakers() {
       <PageTitle title="VIPs" />
       <div className={cls}>
         <div className="grid grid-cols-2 lg:grid-cols-4">
-          <Card avatar={avatar8} name="Baiwei" />
-          <Card avatar={avatar2} name="IOYOI" />
-          <Card avatar={avatar6} name="metaSynth" />
-          <Card avatar={avatar1} name="Niq" />
-          <Card avatar={avatar4} name="Reva" />
-          <Card avatar={avatar9} name="Rinii fish" />
-          <Card avatar={avatar3} name="Sleepy" />
-          <Card avatar={avatar5} name="TingSong" />
-          <Card avatar={avatar10} name="Ton ran" />
-          <Card avatar={avatar7} name="XIx" />
-          <Card avatar={avatar12} name="Arc4g" />
-          <Card avatar={avatar14} name="Debbie Digital" />
-          <Card avatar={avatar} name="Fabin Rasheed" />
-          <Card avatar={avatar16} name="Facu" />
-          <Card avatar={avatar20} name="Jay Delay" />
-          <Card avatar={avatar21} name="Killer Acid" />
-          <Card avatar={avatar18} name="Luluxx" />
-          <Card avatar={avatar19} name="Milton Sanz" />
-          <Card avatar={avatar15} name="Olive Allen" />
-          <Card avatar={avatar11} name="Rutger Van Der Tas" />
-          <Card avatar={avatar17} name="Skygolpe" />
-          <Card avatar={avatar13} name="Sparrow" />
+          {LIST.map((item) => (
+            <Card key={item.name} avatar={item.avatar} name={item.name} />
+          ))}
         </div>
         <div className={styles.text}>
           <div>* The above VIP list will be updated at any time</div>
-          <div>* 以上嘉宾名单将随时更新</div>
         </div>
       </div>
     </div>

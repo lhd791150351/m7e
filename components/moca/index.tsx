@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
+
 import MocaCard, { DataItem } from '../moca-card';
 import Bullet from './Bullet';
 import avatar1 from '../../public/images/avatar1.png';
@@ -87,6 +88,7 @@ const dataList = [
     author: ['Sleepy'],
     twitter: ['https://twitter.com/0x13BlockBeats'],
     title: 'The Flower',
+    mcp: 'https://mycryptoprofile.io/profile/@0x13blockbeats',
     platform: 'OpenSea',
     platformLink:
       'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/30133713994736285132554688158522241961977932724826138760527358180941444939777?assetContractAddress=0x495f947276749ce646f68ac8c248420045cb7b5e&tokenId=30133713994736285132554688158522241961977932724826138760527358180941444939777',
@@ -95,7 +97,7 @@ const dataList = [
     `,
   },
   {
-    url: 'https://storage.opensea.io/files/b631caa78c71bd963f331d7f34eef6bf.png',
+    url: 'https://bee-5.gateway.ethswarm.org/bzz/738979070073d6727872a3e786e4930d2e2014a76ca54db6292beff5d5b61158',
     author: ['TingSong'],
     twitter: ['https://twitter.com/Song11Ting'],
     title: 'Cyber Wonder Woman',
@@ -117,11 +119,11 @@ const dataList = [
   },
   {
     url: 'https://assets.foundation.app/Er/1U/QmdKnHMGp1f3c8UY18ZbnVP5VH1A7po8HK3ZRM6hNTEr1U/nft_q4.mp4',
-    author: ['Xix'],
+    author: ['XI'],
     twitter: ['https://twitter.com/xix2033'],
     title: `Avatar's way of death`,
     platform: 'Foundation',
-    platformLink: 'https://foundation.app/@xix/r-avatar-s-way-of-death-r-86959',
+    platformLink: 'https://foundation.app/@xix/l-avatar-s-way-of-death-l-86967',
     type: 'video',
     desc: `Zhuangzi sleeps with the skull is a story from "Zhuangzi · Outer chapters". The artist quoted this story to discuss the relationship between the diversity of Avatar and the death of virtual identities.
     The work will be sold in two editions. Artists confuse the value of groups and individuals by bidding greatly differently.
@@ -129,106 +131,77 @@ const dataList = [
     庄子叹骷髅是出自《庄子·外篇》的一个故事，艺术家引用这个故事旨在探讨Avatar身份的多样性和虚拟身份死亡的关系。
     作品将会有两个版本出售，艺术家通过差异极大出价，混淆群体价值和个人价值。`,
   },
-  // {
-  //   url: '',
-  //   author: ['Arc4g'],
-  //   twitter: ['https://twitter.com/arc4g'],
-  //   title: 'Ignite',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
-  // {
-  //   url: '',
-  //   author: ['Debbie Digital'],
-  //   twitter: [''],
-  //   title: 'TBD',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
-  // {
-  //   url: '',
-  //   author: ['Fabin Rasheed'],
-  //   twitter: ['https://twitter.com/fabinrasheed'],
-  //   title: 'TBD',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
+  {
+    url: 'https://mkpcdn.com/1000x/314198c652390f01cd4147a2c0cf2035_236718.jpg',
+    author: ['Debbie Digital'],
+    twitter: ['https://twitter.com/DebbieHdigital'],
+    title: 'Spiritual Rebirth',
+    platform: 'makersplace',
+    platformLink: 'https://makersplace.com/debbiehdigital/spiritual-rebirth-1-of-1-80764/',
+    type: 'image',
+    desc: 'In order to rise from your own darkness, sometimes you have to die inside and believe in yourself and love yourself to become a new thing. This is a personal project for Shanghai Metaverse Week.',
+  },
   {
     url: 'https://ipfs.pixura.io/ipfs/QmdU2YNW1coTtxHYEqC93LCrdHuPXPrDqKYDEwe6e84eyg/176FINAL.png',
     author: ['Facu'],
-    twitter: [''],
+    twitter: ['https://twitter.com/fakito__'],
     title: 'SOÑAR DESPIERTO ',
     platform: 'superrare',
     platformLink: 'https://superrare.com/artwork-v2/so%C3%B1ar-despierto-27345',
     type: 'image',
     desc: 'La visión se te empaña de oscuridad al menos que cierres los ojos, ahí se encuentra todo el color, ahí están tus sueños y tus metas materializándose poco a poco en frente tuyo como por arte de magia. Al abrirlos te preguntas donde se fueron, como puede ser que no los veas más si estuviste tan cerca suyo. Queres volver a estar rodeado de todos esos colores pero se fueron, no los encontrás ni de noche ni de día. Sabes que están ahí, solo hace falta hacer cara a la oscuridad que te empaña los ojos cuando los abrís.',
   },
-  // {
-  //   url: '',
-  //   author: ['Jay Delay'],
-  //   twitter: ['https://twitter.com/Jay_Delay'],
-  //   title: 'TBD',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
   {
-    url: 'https://uc2dd2dd1b40f643c25c7834791e.previews.dropboxusercontent.com/p/thumb/ABRLo3P7MlMSdORd0Bd-b_x1wtGvpBb0r9yd_zRvw7bKMXj1_kyAEFcPeu8vv0F_j1NAZokruT4F28eDMXjUXF1GxSIBhoPoM9LZqH0pOB99I_JAbbeBhp8TA5Gmx4MCjILIv8bzfG1ipFcdgr78WDT6h9qdM_-tG8EIF7S4yTa1VZTCgvQiuEurYDQ1ATdFM9oWj20w-0aikE5pgKniBOQ_6UIQuXDxRLVyLHiOHepbEh_s-MkoR5YuJVrY4hjf9AltHSVThMIAFcJ250PTBNWwspN6-QkJxioA39pdkg8rlG2XQoNpmi3yKBoVbduBOb-euGaIxc8TBFRyDr0E8H8u0ja1R-Ozw27CpmXv_-RTseq5DspF8BE7syFWrrmTA3Hfqxb3hcK18Wck3NvXf34SyxHBf8_FIpDsjoMuQZo-D_JjO5ARdM_3ErcHKl5gbp2Xsns1uWL3bwpqGgYQgWggq7rKtMijhoyQUoRIlwRG6IelXpx1U2uueidALWSx_aP2TE9ieP7U27JNaK_S4yqZ/p.jpeg?fv_content=true&size_mode=5',
+    url: 'https://lh3.googleusercontent.com/sRxWbdZmYYI4MR1qnLfhDjIUIgl6WjCwG4nIuck7q3_VB3dgtdERNFOGtbqXwvhisdglq6FENxdHLOhi07csIoPz7ZZr3hC5P6xdag',
+    author: ['Jay Delay'],
+    twitter: ['https://twitter.com/Jay_Delay'],
+    title: 'Reptile Style',
+    platform: 'rarible',
+    platformLink:
+      'https://rarible.com/token/0x9b26616ee0cbd466e072e86a99b4bfa4a3489bf4:10042?tab=owners',
+    type: 'image',
+    desc: 'ELECTRIC FEELINGS ',
+  },
+  {
+    url: 'https://ipfs.pixura.io/ipfs/QmVy5NeTWjxyYHJ3Xaii8Dc1KunVShPQonuy93mmbtpkDS/AncientGallery.jpg',
     author: ['Killer Acid'],
     twitter: ['https://twitter.com/killeracid'],
     title: 'Ancient Gallery',
     platform: 'dropbox',
-    platformLink: 'https://www.dropbox.com/s/i5lr3i0m4r0002f/Ancient%20Gallery.jpg?dl=0',
+    platformLink: 'https://superrare.com/artwork-v2/ancient-gallery--28790',
+    type: 'image',
+    desc: `Created for the Museum of Crypto Art curated art show entitled 'Avatar: My Metaverse' at the Hanshan Art Museum, Suzhou, China and the Shanghai Metaverse Week exhibit ‘Self Awakened: Quest for Identity’`,
+  },
+  {
+    url: 'https://pro2-bar-s3-cdn-cf4.myportfolio.com/02c5201375c3706250b26cf840ace79c/fb4df39b-0b0f-4fed-92c0-1765a023bb84_rw_1920.png?h=ec955c528be858843356532460634b02',
+    author: ['Fabin Rasheed'],
+    twitter: ['https://twitter.com/fabinrasheed'],
+    title: 'Astraglade',
+    platform: 'Opensea',
+    platformLink: 'https://opensea.io/assets/astraglade',
     type: 'image',
     desc: '',
   },
-  // {
-  //   url: '',
-  //   author: ['LuluxXX'],
-  //   twitter: ['https://twitter.com/luluixixix'],
-  //   title: 'TBD',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
-  // {
-  //   url: '',
-  //   author: ['Milton Sanz'],
-  //   twitter: ['https://twitter.com/miltonsanz7'],
-  //   title: 'TBD',
-  //   platform: 'superrare',
-  //   platformLink: 'https://superrare.com/artwork-v2/submerged-27100',
-  //   type: '',
-  //   desc: '',
-  // },
-  // {
-  //   url: '',
-  //   author: ['Olive Allen'],
-  //   twitter: ['https://twitter.com/IamOliveAllen'],
-  //   title: 'TBD',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
-  // {
-  //   url: '',
-  //   author: ['Rutger Van Der Tas'],
-  //   twitter: ['https://twitter.com/rutgervandertas'],
-  //   title: 'TBD',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
+  {
+    url: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcY4U81n3zdY3SbYi4QfUfBKqbPJIU1_P4-CuNVniRcw_d6w',
+    author: ['Milton Sanz'],
+    twitter: ['https://twitter.com/miltonsanz7'],
+    title: 'Submerged',
+    platform: 'superrare',
+    platformLink: 'https://superrare.com/artwork-v2/submerged-27100',
+    type: 'image',
+    desc: '',
+  },
+  {
+    url: 'https://ipfs.pixura.io/ipfs/QmUDiLnqAQmkDyZCCEnnJx36FEiwFQtE7h6Nf9QpZ1t3Qe/Mamihlapinatapai.png',
+    author: ['Milton Sanz'],
+    twitter: ['https://twitter.com/miltonsanz7'],
+    title: 'Submerged',
+    platform: 'superrare',
+    platformLink: 'https://superrare.com/artwork-v2/mamihlapinatapai-26402',
+    type: 'image',
+    desc: '',
+  },
   {
     url: 'https://ipfs.pixura.io/ipfs/QmR52y7dSwB16G4DyVyG4FmYJ9fd2gmqqj9Xza3ZKP48kn/Overthinking.gif',
     author: ['Skygolpe'],
@@ -239,16 +212,31 @@ const dataList = [
     type: 'image',
     desc: 'The mind is a complex system that controls our thoughts and emotions. External pressures that modern society places on us as individuals can quickly become internalized to morph into mental millstones. This artwork captures the essence of our inability to rid ourselves of these issues. The background of the artwork first provides us with this view of this world. The coarse red texture is reminiscent of the external pressures that exist within society; dark, negative clouds are never too far from us. The textural qualities of the paint on the digital canvas help to reinforce the suggestion of the duality of the artwork; existing both physically and mentally. We see a subject silhouetted in this universe, struggling to avoid these mental stresses. The nondescript form tells us that this could be anyone. We can see that avoidance of these external factors is impossible as the built-up red-colored pressure spills inwards through the subject’s ears. Soundwaves soon become thoughts that take on gloomy green and grey tones. The face is obscured by these thoughts as if consuming and overwhelming the subject. An artist alone, in the solitude of their mind, alienated from anything other than thoughts of creation; a mind saturated like their paint-soaked sponge. Thought upon thought; nothing else; overthinking, until a zenith is finally reached to repeat through an infinite cycle. Puffin@Cent',
   },
-  // {
-  //   url: '',
-  //   author: ['Sparrow'],
-  //   twitter: [''],
-  //   title: 'TBD',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
+  {
+    url: 'https://res.cloudinary.com/asynchronous-art-inc/image/upload/h_1280,f_auto/art/0xdc546f477f273bcf327297bf4adcb671b5f20be1/QmcDan2mA93ZMV3izqLVNhCBqfPg6nuCRZuddVidNzURkr?6a0b',
+    author: ['Sparrow'],
+    twitter: ['https://twitter.com/blackboxdotart'],
+    title: 'Eternity',
+    platform: 'TBD',
+    platformLink: 'https://async.art/art/master/0xb6dae651468e9593e4581705a09c10a76ac1e0c8-3276 ',
+    type: 'image',
+    desc: `"Eternity is in love with the productions of time." Night layer: "For man has closed himself up, till he sees all things thro' narrow chinks of his cavern"
+    Sunrise layer: "He who binds to himself a joy Does the wingèd life destroy; But he who kisses the joy as it flies Lives in eternity's sunrise."
+    Day layer: "If the doors of perception were cleansed everything would appear to man as it is, infinite."
+    Sunset layer: "The moon like a flower In heaven's high bower, With silent delight, Sits and smiles on the night."
+    All quotes from William Blake, who has taught me much about The Self, identity, and being in the world.  I turned to Blake to get inspiration for what it means to be in these new virtual worlds we are creating.
+    `,
+  },
+  {
+    url: 'https://d2iccaf7eutw5f.cloudfront.net/0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7/4963/large',
+    author: ['Arc4g'],
+    twitter: ['https://twitter.com/arc4g'],
+    title: 'Unveil',
+    platform: 'zora',
+    platformLink: 'https://zora.co/collections/zora/4963',
+    type: 'video',
+    desc: '',
+  },
   {
     url: 'https://assets.foundation.app/Td/Z9/QmcfnwASxnrH2hJnT5Lz83ADcvCpMof4GMCM31W9T7TdZ9/nft_q4.mp4',
     author: ['Arc4g', 'Baiwei'],
@@ -265,36 +253,65 @@ const dataList = [
     
     The background music created by baiwei is also encrypted with Chinese calligraphy for "self-awakening".`,
   },
-  // {
-  //   url: '',
-  //   author: ['Rutger Van Der Tas', 'IOYOI'],
-  //   twitter: ['https://twitter.com/rutgervandertas', 'https://twitter.com/ioyoiioaoi'],
-  //   title: '',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
-  // {
-  //   url: '',
-  //   author: ['LuluxXX', 'Riniifish'],
-  //   twitter: ['https://twitter.com/luluixixix', 'https://twitter.com/riniifish'],
-  //   title: '',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
-  // {
-  //   url: '',
-  //   author: ['Debbie Digital', 'Reva'],
-  //   twitter: ['', 'https://twitter.com/Reva_fyw'],
-  //   title: '',
-  //   platform: 'TBD',
-  //   platformLink: '',
-  //   type: '',
-  //   desc: '',
-  // },
+  {
+    url: 'https://ipfs.pixura.io/ipfs/QmdBjsyWhVxCpYAk6RZHUEw6wbEw1s771yZ3ksp2gDkk5M/crashingintoMotherBoardplainwhiteSUPERRARE.glb',
+    author: ['Rutger Van Der Tas', 'IOYOI'],
+    twitter: ['https://twitter.com/rutgervandertas', 'https://twitter.com/ioyoiioaoi'],
+    title: 'Crashing into Motherboard',
+    platform: 'superrare',
+    platformLink:
+      'https://superrare.com/artwork-v2/crashing-into-motherboard---%E6%92%9E%E4%B8%8A%E4%B8%BB%E6%A9%9F%E6%9D%BF-28937',
+    type: '3d',
+    desc: 'The Motherboard is the backbone of the computer. Without it, none of the computer pieces, such as the CPU, GPU, or hard drive, could interact.The Internet and blockchain are becoming the backbone of our society. The devices in our lives are connected to our neural system. We indulge ourselves in the digital highway escapades, disconnecting ourselves from the direct touchable world around us. We as humans need to find the right balance between online and offline time. We are waking up to our new self. While the Old World still reigns over our heads. ',
+  },
+  {
+    url: 'https://ipfs.pixura.io/ipfs/QmVXAA74QVsZ52HBEKwPnFLWRE8Nqd4G38KERbGPvLsHXz/IOYOIandRutgervanderTASuniversalplaygroundunderfire.glb',
+    author: ['Rutger Van Der Tas', 'IOYOI'],
+    twitter: ['https://twitter.com/rutgervandertas', 'https://twitter.com/ioyoiioaoi'],
+    title: 'Universal playground under fire',
+    platform: 'superrare',
+    platformLink:
+      'https://superrare.com/artwork-v2/crashing-into-motherboard---%E6%92%9E%E4%B8%8A%E4%B8%BB%E6%A9%9F%E6%9D%BF-28937',
+    type: '3d',
+    desc: 'Our Awaking Self is at the doorstep. But do we open the door to let her in? 我們覺醒的自我就在門口。但我們是否打開門，讓她進來？',
+  },
+  {
+    url: 'https://lh3.googleusercontent.com/JNF63vC9DLy5aOsxHVdcLhuSjF3S1575f55yx1yd1CVY-X3qng5IYt5ASZgeLT8brurAfKSW-pr_D1daNVpZpp8BhOACYLLordDlvw=w600',
+    author: ['LuluxXX', 'Riniifish'],
+    twitter: ['https://twitter.com/luluixixix', 'https://twitter.com/riniifish'],
+    title: '闯入元宇宙世界的女孩',
+    platform: 'knownorigin',
+    platformLink:
+      'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/52976075206626058040109150762651901835369219567962475591099848262217222848513',
+    type: 'image',
+    desc: `“collaboration with chinese cryptoartist @riniifish . created as our contribution to the "Metaverse Week 2021" in Shangai . big thanks to MOCA (Museum of Crypto Art) for the invitation and introduction. 感谢MOCA :)
+    "Self-sovereign identities, independent personalities, and creative avatars are the prerequisites and assets for people to enter the metaverse to work, live and play freely in future"
+    `,
+  },
+  {
+    url: 'https://koda-image-service-gp2s5beobq-uc.a.run.app/cdn/images/network/1/edition/2343000',
+    author: ['LuluxXX', 'Riniifish'],
+    twitter: ['https://twitter.com/luluixixix', 'https://twitter.com/riniifish'],
+    title: '闯入元宇宙世界的女孩',
+    platform: 'knownorigin',
+    platformLink: 'https://knownorigin.io/gallery/2343000-rin-ii-luluxxx',
+    type: 'image',
+    desc: `“collaboration with chinese cryptoartist @riniifish . created as our contribution to the "Metaverse Week 2021" in Shangai . big thanks to MOCA (Museum of Crypto Art) for the invitation and introduction. 感谢MOCA :)
+    "Self-sovereign identities, independent personalities, and creative avatars are the prerequisites and assets for people to enter the metaverse to work, live and play freely in future"
+    `,
+  },
+  {
+    url: 'https://mkpcdn.com/videos/563c5e505f1b9500444f662fb8a0e3e4_331482.mp4',
+    author: ['Debbie Digital', 'Reva'],
+    twitter: ['https://twitter.com/DebbieHdigital', 'https://twitter.com/Reva_fyw'],
+    title: 'Self-Recognition',
+    platform: 'makersplace',
+    platformLink: 'https://makersplace.com/debbiehdigital/self-recognition-1-of-1-80749/',
+    type: 'video',
+    desc: `"Self-recognition leads to self-awakening. Everyone can be as bright as stars, as gorgeous as flowers."
+    This is a collaboration piece created by Debbie H Digital and Reva for Metaverse exhibition. Debbie's portrait and the geometric background of Reva have well balanced together and achieved to make a great depth and intricacy. The image of the portrait helped to balance the detailed effects of Reva's moving parts.¸
+    `,
+  },
 ];
 
 const generText = (n) => {
@@ -387,7 +404,6 @@ export default function Moca({ backCall }) {
               })}
             </div>
             <div className={styles.text}>
-              <div>*以上艺术作品将在10月22日之前全部更新展示</div>
               <div>*All the above artworks will be updated and displayed by October 22nd</div>
             </div>
 
