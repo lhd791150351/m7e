@@ -69,11 +69,11 @@ const LIST = [
   },
   { avatar: huangheshan, name: 'HuangHeshan, Designer & Artist, Author @tulifu' },
   { avatar: gzq, name: 'GuZhenqing, Curator and art critic @Chinese contemporary art' },
-  { avatar: gabby, name: 'Gabby Dizon£, Co-Founde @YGG' },
+  { avatar: gabby, name: 'Gabby Dizon, Co-Founde @YGG' },
   { avatar: emmaHu, name: 'EmmaHu, ART DIRECTOR @CryptoC & WaveC' },
   { avatar: ck, name: 'ck, Cryptoart Collector, Founder @CV Analytics' },
   { avatar: chenyuetian, name: 'CHENYUETIAN, FOUNDER @HUOFENGCaptial' },
-  { avatar: caoyin, name: 'CAOYIN£, MANAGING DIRECTOR£ @DIGITAL RENAISSANCE FOUNDATION' },
+  { avatar: caoyin, name: 'CAOYIN, MANAGING DIRECTOR @DIGITAL RENAISSANCE FOUNDATION' },
   {
     avatar: stella,
     name: 'Stella, Head of Asia @MetaV',
