@@ -1,7 +1,9 @@
+/* eslint-disable no-shadow */
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { css, jsx, keyframes } from '@emotion/react';
 import ReactDOM from 'react-dom';
+import React from 'react';
 
 export enum MessageTypes {
   Success = 'Success',
@@ -22,7 +24,8 @@ const animate = keyframes`
 `;
 
 interface MessageProps {
-  content: any;
+  content?: any;
+  did?: string;
   type?: MessageTypes;
 }
 
@@ -59,41 +62,122 @@ export const MessageComp = (props: MessageProps) => {
   const type: MessageTypes = props.type || MessageTypes.Success;
 
   return (
-    <div
-      css={css`
-        position: fixed;
-        top: 40px;
-        right: 50px;
-        z-index: 10001;
-        background: #111;
-        border-radius: 8px;
-        animation: ${animate} 0.3s linear;
-      `}
-    >
-      <div
-        css={css`
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-width: 120px;
-          padding: 16px 24px;
-          font-size: 15px;
-          color: white;
-          border-radius: 8px;
-          ${TYPE_CSS_MAP[type]};
-          a {
-            color: white;
-          }
-        `}
-      >
+    <>
+      (
+      {props.did ? (
         <div
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: props.content,
-          }}
-        />
-      </div>
-    </div>
+          css={css`
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10001;
+          `}
+        >
+          <div
+            css={css`
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 490px;
+              height: 100px;
+              margin: auto;
+              background-image: url('/images/messageBG.png');
+              background-repeat: no-repeat;
+              -moz-background-size: 100% 100%;
+              background-size: 100% 100%;
+              border-radius: 8px;
+              animation: ${animate} 0.3s linear;
+            `}
+          >
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 120px;
+                padding: 16px 24px;
+                color: white;
+                font-size: 24px;
+                font-family: 'Anonymous Pro';
+                line-height: 24px;
+                border-radius: 8px;
+                a {
+                  margin: 0 5px 0 15px;
+                  color: white;
+                  white-space: nowrap;
+                  span {
+                    font-weight: bold;
+                    text-decoration: underline;
+                  }
+                }
+              `}
+            >
+              view your curation in
+              <a href={`https://dataverse.art/#/${props.did}`} target="_blank">
+                <span>Dataverse</span>
+              </a>
+              <img
+                src="/images/arrow.png"
+                css={css`
+                  width: 15px;
+                  padding-top: 4px;
+                `}
+              />
+              <div
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{
+                  __html: props.content,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div
+          css={css`
+            position: fixed;
+            top: 40px;
+            right: 50px;
+            z-index: 10001;
+            background: #111;
+            border-radius: 8px;
+            animation: ${animate} 0.3s linear;
+          `}
+        >
+          <div
+            css={css`
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 120px;
+              padding: 16px 24px;
+              color: white;
+              font-size: 15px;
+              border-radius: 8px;
+              ${TYPE_CSS_MAP[type]};
+              a {
+                color: white;
+              }
+            `}
+          >
+            <div
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: props.content,
+              }}
+            />
+          </div>
+        </div>
+      )}
+      )
+    </>
   );
 };
 

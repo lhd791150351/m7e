@@ -108,8 +108,9 @@ export default function MocaCard({
         Message({ content: 'Init your Dataverse...' });
         await initCollections();
       }
-
-      setDid(getDID());
+      const DID = getDID();
+      setDid(DID);
+      return DID;
     } catch {
       Message({ content: 'Failed Network!', type: MessageTypes.Error });
       throw new Error('');
@@ -119,8 +120,9 @@ export default function MocaCard({
   };
 
   const like = useCallback(async () => {
+    let DID;
     try {
-      await authenticate();
+      DID = await authenticate();
     } catch {
       return;
     }
@@ -169,11 +171,8 @@ export default function MocaCard({
       setLikedState(true);
 
       await reportSaveNft({ chain, token_id: tokenId, contract });
-
-      setTimeout(() => {
-        const redirectUrl = `<a href='https://dataverse.art/#/${did}' target='_blank'>[View in Dataverse]</a>`;
-        Message({ content: redirectUrl, duration: 6000 });
-      }, 3000);
+      
+      Message({ did: did || DID, duration: 6000 });
     } catch {
       Message({
         content: 'Save NFT failed!',
