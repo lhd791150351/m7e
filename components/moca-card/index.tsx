@@ -11,6 +11,7 @@ import Message, { MessageTypes } from '../../dataverse/components/Message';
 import { reportSaveNft } from '../../dataverse/apis/report';
 import {
   authenticateIDX,
+  hasCollections,
   initCollections,
   initIDX,
   getDID,
@@ -76,7 +77,7 @@ export default function MocaCard({
 
   const authenticate = async () => {
     if (isMobile()) {
-      Message({ content: 'For better experience, please browse on the computer' });
+      Message({ content: 'For better experience, browse via your pc' });
       throw new Error('');
     }
 
@@ -87,8 +88,6 @@ export default function MocaCard({
     setAuthenticateLoading(true);
     try {
       initIDX();
-
-      Message({ content: 'Start authenticating...' });
 
       const web3Modal = new Web3Modal({
         network: process.env.WEB3_NETWORK,
@@ -104,9 +103,11 @@ export default function MocaCard({
       await authenticateIDX(provider, addresses[0]);
       // await authenticateIDX(window['ethereum' as keyof typeof window], address);
 
-      Message({ content: 'Init your Dataverse...' });
-
-      await initCollections();
+      const isCollectionInit = await hasCollections();
+      if (!isCollectionInit) {
+        Message({ content: 'Init your Dataverse...' });
+        await initCollections();
+      }
 
       setDid(getDID());
     } catch {
@@ -132,7 +133,7 @@ export default function MocaCard({
         const likeListParse = JSON.parse(likeList);
         if (likeListParse.includes(platformLink)) {
           Message({
-            content: 'Already saved to dataverse!',
+            content: 'Already saved!',
             type: MessageTypes.Info,
           });
           return;
@@ -144,7 +145,7 @@ export default function MocaCard({
       if (!tokenId) throw new Error(' ');
 
       Message({
-        content: 'Saving...',
+        content: 'Start NFT curation...',
       });
 
       await addBookmark({
@@ -169,13 +170,9 @@ export default function MocaCard({
 
       await reportSaveNft({ chain, token_id: tokenId, contract });
 
-      Message({
-        content: 'Save NFT successfully!',
-      });
-
       setTimeout(() => {
         const redirectUrl = `<a href='https://dataverse.art/#/${did}' target='_blank'>[View in Dataverse]</a>`;
-        Message({ content: redirectUrl, duration: 0 });
+        Message({ content: redirectUrl, duration: 6000 });
       }, 3000);
     } catch {
       Message({

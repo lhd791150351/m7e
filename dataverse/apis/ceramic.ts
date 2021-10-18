@@ -23,11 +23,12 @@ export async function authenticateIDX(ethereumProvider: any, address: string): P
   await apis.threeId.authenticate({ ceramic, didProvider });
 }
 
-export async function initCollections(did?: string) {
-  const isCollectionInit = await apis.curation.hasCollections(idx, did);
-  if (!isCollectionInit) {
-    await apis.curation.initCollections(idx);
-  }
+export async function hasCollections(did?: string) {
+  return apis.curation.hasCollections(idx, did);
+}
+
+export async function initCollections() {
+  await apis.curation.initCollections(idx);
 }
 
 export async function setProfile(profile: BasicProfile) {
