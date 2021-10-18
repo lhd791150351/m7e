@@ -89,9 +89,8 @@ const dataList = [
     twitter: ['https://twitter.com/0x13BlockBeats'],
     title: 'The Flower',
     mcp: 'https://mycryptoprofile.io/profile/@0x13blockbeats',
-    platform: 'OpenSea',
-    platformLink:
-      'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/30133713994736285132554688158522241961977932724826138760527358180941444939777?assetContractAddress=0x495f947276749ce646f68ac8c248420045cb7b5e&tokenId=30133713994736285132554688158522241961977932724826138760527358180941444939777',
+    platform: 'foundation',
+    platformLink: 'https://foundation.app/@0x13BlockBeats/~/97092',
     type: 'video',
     desc: `The Flower Generative art by Sleepy. About beauty, about love, about radiance, about dreams, about life. 花儿，Sleepy的生成艺术作品，关于美、关于爱、关于璀璨、关于梦想、关于生命。
     `,
@@ -271,7 +270,7 @@ const dataList = [
     title: 'Universal playground under fire',
     platform: 'superrare',
     platformLink:
-      'https://superrare.com/artwork-v2/crashing-into-motherboard---%E6%92%9E%E4%B8%8A%E4%B8%BB%E6%A9%9F%E6%9D%BF-28937',
+      'https://superrare.com/artwork-v2/universal-playground-under-fire.---%E9%81%8A%E6%A8%82%E5%A0%B4%E5%8F%97%E5%88%B0%E6%8A%A8%E6%93%8A-28943',
     type: '3d',
     desc: 'Our Awaking Self is at the doorstep. But do we open the door to let her in? 我們覺醒的自我就在門口。但我們是否打開門，讓她進來？',
   },
