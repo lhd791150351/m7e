@@ -66,6 +66,7 @@ export const MessageComp = (props: MessageProps) => {
       (
       {props.did ? (
         <div
+          id="dataverseMessageBox"
           css={css`
             position: absolute;
             top: 0;
@@ -74,6 +75,7 @@ export const MessageComp = (props: MessageProps) => {
             left: 0;
             z-index: 10001;
           `}
+          onClick={(e) => e.currentTarget.remove()}
         >
           <div
             css={css`
@@ -82,11 +84,12 @@ export const MessageComp = (props: MessageProps) => {
               right: 0;
               bottom: 0;
               left: 0;
+              z-index: 10002;
               display: flex;
               align-items: center;
               justify-content: center;
-              width: 490px;
-              height: 100px;
+              width: 440px;
+              height: 90px;
               margin: auto;
               background-image: url('/images/messageBG.png');
               background-repeat: no-repeat;
@@ -95,6 +98,7 @@ export const MessageComp = (props: MessageProps) => {
               border-radius: 8px;
               animation: ${animate} 0.3s linear;
             `}
+            onClick={(e) => e.stopPropagation()}
           >
             <div
               css={css`
@@ -104,7 +108,7 @@ export const MessageComp = (props: MessageProps) => {
                 min-width: 120px;
                 padding: 16px 24px;
                 color: white;
-                font-size: 24px;
+                font-size: 21px;
                 font-family: 'Anonymous Pro';
                 line-height: 24px;
                 border-radius: 8px;
@@ -113,14 +117,18 @@ export const MessageComp = (props: MessageProps) => {
                   color: white;
                   white-space: nowrap;
                   span {
-                    font-weight: bold;
+                    /* font-weight: bold; */
                     text-decoration: underline;
                   }
                 }
               `}
             >
               view your curation in
-              <a href={`https://dataverse.art/#/${props.did}`} target="_blank">
+              <a
+                href={`https://dataverse.art/#/${props.did}`}
+                target="_blank"
+                onClick={() => document.querySelector('#dataverseMessageBox').remove()}
+              >
                 <span>Dataverse</span>
               </a>
               <img
@@ -195,6 +203,7 @@ const message = (props: MessageProps & { duration?: number }) => {
   }
 
   holder.addEventListener('click', () => {
+    if (props.did) return;
     holder.remove();
   });
 

@@ -171,8 +171,8 @@ export default function MocaCard({
       setLikedState(true);
 
       await reportSaveNft({ chain, token_id: tokenId, contract });
-      
-      Message({ did: did || DID, duration: 6000 });
+
+      Message({ did: did || DID, duration: 0 });
     } catch {
       Message({
         content: 'Save NFT failed!',
