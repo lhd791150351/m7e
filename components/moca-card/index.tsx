@@ -30,6 +30,7 @@ export interface DataItem {
   chain?: string;
   contract?: string;
   tokenId?: string;
+  liked?: boolean;
   likeCount: string;
   did: string;
   authenticateLoading: boolean;
@@ -52,6 +53,7 @@ export default function MocaCard({
   chain,
   contract,
   tokenId,
+  liked,
   likeCount,
   did,
   authenticateLoading,
@@ -62,10 +64,15 @@ export default function MocaCard({
 }: DataItem) {
   const cls = classnames(styles['moca-card']);
   const [likeCountState, setLikeCountState] = useState(likeCount);
+  const [likedState, setLikedState] = useState(liked);
 
   useEffect(() => {
     setLikeCountState(likeCount);
   }, [likeCount]);
+
+  useEffect(() => {
+    setLikedState(liked);
+  }, [liked]);
 
   const authenticate = async () => {
     if (isMobile()) {
@@ -120,6 +127,18 @@ export default function MocaCard({
       return;
     }
     try {
+      const likeList = localStorage.getItem('likedList');
+      if (likeList) {
+        const likeListParse = JSON.parse(likeList);
+        if (likeListParse.includes(platformLink)) {
+          Message({
+            content: 'Already saved to dataverse!',
+            type: MessageTypes.Info,
+          });
+          return;
+        }
+      }
+
       setLikeLoading(true);
 
       if (!tokenId) throw new Error(' ');
@@ -138,7 +157,15 @@ export default function MocaCard({
         date: new Date().toISOString(),
       });
 
+      if (likeList) {
+        const likeListParse = JSON.parse(likeList);
+        localStorage.setItem('likedList', JSON.stringify([...likeListParse, platformLink]));
+      } else {
+        localStorage.setItem('likedList', JSON.stringify([platformLink]));
+      }
+
       setLikeCountState((s) => s + 1);
+      setLikedState(true);
 
       await reportSaveNft({ chain, token_id: tokenId, contract });
 
@@ -170,7 +197,11 @@ export default function MocaCard({
       </Head>
       <div className={styles.header}>
         <div className={styles.name}>{title}</div>
-        <img src="/images/like.png" className={styles.like} onClick={like}></img>
+        <img
+          src={likedState ? '/images/like_red.png' : '/images/like.png'}
+          className={styles.like}
+          onClick={like}
+        ></img>
         <span className={styles.num}>{likeCountState}</span>
       </div>
       <div className={styles.body}>

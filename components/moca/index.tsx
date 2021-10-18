@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
 
@@ -6,7 +7,7 @@ import Bullet from './Bullet';
 import avatar1 from '../../public/images/avatar1.png';
 
 import styles from './index.module.less';
-import { fetchNftCount, fetchNftCounts } from '../../dataverse/apis/report';
+import { fetchNftCounts } from '../../dataverse/apis/report';
 
 const dataList = [
   {
@@ -435,6 +436,23 @@ export default function Moca({ backCall }) {
   const [authenticateLoading, setAuthenticateLoading] = useState(false);
   const [likeLoading, setLikeLoading] = useState(false);
   const [likeCountsRepData, setLikeCountsRepData] = useState([]);
+  const [isLikedLists, setIsLikedLists] = useState<
+    {
+      url: string;
+      author: string[];
+      twitter: string[];
+      platform: string;
+      platformLink: string;
+      title: string;
+      type: string;
+      desc: string;
+      mcp?: string;
+      chain?: string;
+      contract?: string;
+      tokenId?: string;
+      liked?: boolean;
+    }[]
+  >(lists);
 
   // 发送弹幕
   useEffect(() => {
@@ -457,6 +475,15 @@ export default function Moca({ backCall }) {
   useEffect(() => {
     (async () => {
       const countsRep = await fetchNftCounts(lists);
+      const likeList = localStorage.getItem('likedList');
+      if (likeList) {
+        const likeListParse = JSON.parse(likeList) as string[];
+        isLikedLists.map((el) => {
+          el.liked = likeListParse.includes(el.platformLink);
+          return el;
+        });
+        setIsLikedLists(isLikedLists);
+      }
       setLikeCountsRepData(countsRep.data.data);
     })();
   }, []);
@@ -494,6 +521,7 @@ export default function Moca({ backCall }) {
                     {...item}
                     key={index}
                     likeCount={likeCountsRepData.length > 0 ? likeCountsRepData[index].count : 0}
+                    liked={isLikedLists[index].liked}
                     did={did}
                     authenticateLoading={authenticateLoading}
                     likeLoading={likeLoading}
