@@ -170,7 +170,7 @@ const dataList = [
     platform: 'dropbox',
     platformLink: 'https://superrare.com/artwork-v2/ancient-gallery--28790',
     type: 'image',
-    desc: `Created for the Museum of Crypto Art curated art show entitled 'Avatar: My Metaverse' at the Hanshan Art Museum, Suzhou, China and the Shanghai Metaverse Week exhibit ‘Self Awakened: Quest for Identity’`,
+    desc: `Ancient Gallery playfully references the Doors rock classic ‘The End’ by juxtaposing the ancient mythological idea (channeled through 60's pop rock) of choosing a mask to wear with a scene of an NFT collector selecting an avatar from his collection. There is a bit of implied violence in the piece, a subtle nod to the individual ego death when one decides to be anonymous. The collector can be seen in the foreground, walking excitedly with his new face while the old him has been severed. This piece was created for The MOCA portion of Shanghai Metaverse week. The theme for the exhibit is Self Awakened: Quest for Identity. While meditating on this idea I heard ‘The End’ come through the radio and I made the random association between the lyrics and the assignment. Can you dig it, anon?`,
   },
   {
     url: 'https://pro2-bar-s3-cdn-cf4.myportfolio.com/02c5201375c3706250b26cf840ace79c/fb4df39b-0b0f-4fed-92c0-1765a023bb84_rw_1920.png?h=ec955c528be858843356532460634b02',
