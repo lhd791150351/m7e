@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useCallback, useState, SetStateAction, Dispatch, useEffect } from 'react';
 import classnames from 'classnames';
 import ReactPlayer from 'react-player';
@@ -31,6 +32,7 @@ export interface DataItem {
   chain?: string;
   contract?: string;
   tokenId?: string;
+  nftLink?: string;
   liked?: boolean;
   likeCount: string;
   did: string;
@@ -54,6 +56,7 @@ export default function MocaCard({
   chain,
   contract,
   tokenId,
+  nftLink,
   liked,
   likeCount,
   did,
@@ -66,6 +69,7 @@ export default function MocaCard({
   const cls = classnames(styles['moca-card']);
   const [likeCountState, setLikeCountState] = useState(likeCount);
   const [likedState, setLikedState] = useState(liked);
+  const [likeLoadingState, setLikeLoadingState] = useState(likeLoading);
 
   useEffect(() => {
     setLikeCountState(likeCount);
@@ -74,6 +78,10 @@ export default function MocaCard({
   useEffect(() => {
     setLikedState(liked);
   }, [liked]);
+
+  useEffect(() => {
+    setLikeLoadingState(likeLoadingState);
+  }, [likeLoadingState]);
 
   const authenticate = async () => {
     if (isMobile()) {
@@ -88,7 +96,7 @@ export default function MocaCard({
     setAuthenticateLoading(true);
     try {
       initIDX();
-
+      Message({ content: 'Start authentication...' });
       const web3Modal = new Web3Modal({
         network: process.env.WEB3_NETWORK,
         cacheProvider: true,
@@ -130,10 +138,11 @@ export default function MocaCard({
       return;
     }
     try {
+      const link = nftLink || platformLink;
       const likeList = localStorage.getItem('likedList');
       if (likeList) {
         const likeListParse = JSON.parse(likeList);
-        if (likeListParse.includes(platformLink)) {
+        if (likeListParse.includes(link)) {
           Message({
             content: 'Already saved!',
             type: MessageTypes.Info,
@@ -143,18 +152,17 @@ export default function MocaCard({
       }
 
       setLikeLoading(true);
-
+      setLikeLoadingState(true);
       if (!tokenId) throw new Error(' ');
 
       Message({
         content: 'Start NFT curation...',
       });
-
       await addBookmark({
         chain,
         contract,
         tokenId,
-        url: platformLink,
+        url: link,
         note: '',
         tags: [],
         date: new Date().toISOString(),
@@ -162,9 +170,9 @@ export default function MocaCard({
 
       if (likeList) {
         const likeListParse = JSON.parse(likeList);
-        localStorage.setItem('likedList', JSON.stringify([...likeListParse, platformLink]));
+        localStorage.setItem('likedList', JSON.stringify([...likeListParse, link]));
       } else {
-        localStorage.setItem('likedList', JSON.stringify([platformLink]));
+        localStorage.setItem('likedList', JSON.stringify([link]));
       }
 
       setLikeCountState((s) => s + 1);
@@ -180,6 +188,7 @@ export default function MocaCard({
       });
     } finally {
       setLikeLoading(false);
+      setLikeLoadingState(false);
     }
   }, [did, authenticateLoading, likeLoading]);
 
@@ -194,7 +203,13 @@ export default function MocaCard({
       <div className={styles.header}>
         <div className={styles.name}>{title}</div>
         <img
-          src={likedState ? '/images/like_red.png' : '/images/like.png'}
+          src={
+            likeLoadingState
+              ? '/images/loading.svg'
+              : likedState
+              ? '/images/like_red.png'
+              : '/images/like.png'
+          }
           className={styles.like}
           onClick={like}
         ></img>

@@ -115,8 +115,8 @@ const dataList = [
     desc: `The Flower Generative art by Sleepy. About beauty, about love, about radiance, about dreams, about life. 花儿，Sleepy的生成艺术作品，关于美、关于爱、关于璀璨、关于梦想、关于生命。
     `,
     chain: 'Ethereum',
-    contract: '0x495f947276749ce646f68ac8c248420045cb7b5e',
-    tokenId: '30133713994736285132554688158522241961977932724826138760527358180941444939777',
+    contract: '0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405',
+    tokenId: '97092',
   },
   {
     url: 'https://bee-5.gateway.ethswarm.org/bzz/738979070073d6727872a3e786e4930d2e2014a76ca54db6292beff5d5b61158',
@@ -211,6 +211,9 @@ const dataList = [
     platformLink: 'https://superrare.com/artwork-v2/ancient-gallery--28790',
     type: 'image',
     desc: `Ancient Gallery playfully references the Doors rock classic ‘The End’ by juxtaposing the ancient mythological idea (channeled through 60's pop rock) of choosing a mask to wear with a scene of an NFT collector selecting an avatar from his collection. There is a bit of implied violence in the piece, a subtle nod to the individual ego death when one decides to be anonymous. The collector can be seen in the foreground, walking excitedly with his new face while the old him has been severed. This piece was created for The MOCA portion of Shanghai Metaverse week. The theme for the exhibit is Self Awakened: Quest for Identity. While meditating on this idea I heard ‘The End’ come through the radio and I made the random association between the lyrics and the assignment. Can you dig it, anon?`,
+    chain: 'Ethereum',
+    contract: '0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0',
+    tokenId: '28790',
   },
   {
     url: 'https://pro2-bar-s3-cdn-cf4.myportfolio.com/02c5201375c3706250b26cf840ace79c/fb4df39b-0b0f-4fed-92c0-1765a023bb84_rw_1920.png?h=ec955c528be858843356532460634b02',
@@ -221,6 +224,10 @@ const dataList = [
     platformLink: 'https://opensea.io/assets/astraglade',
     type: 'image',
     desc: '',
+    chain: 'Ethereum',
+    contract: '0xf6680e700394e7fdc1edc8d57653f507a4192931',
+    tokenId: '96',
+    nftLink: 'https://opensea.io/assets/0xf6680e700394e7fdc1edc8d57653f507a4192931/96',
   },
   {
     url: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcY4U81n3zdY3SbYi4QfUfBKqbPJIU1_P4-CuNVniRcw_d6w',
@@ -337,7 +344,7 @@ const dataList = [
     desc: 'Our Awaking Self is at the doorstep. But do we open the door to let her in? 我們覺醒的自我就在門口。但我們是否打開門，讓她進來？',
     chain: 'Ethereum',
     contract: '0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0',
-    tokenId: '28937',
+    tokenId: '28943',
   },
   {
     url: 'https://lh3.googleusercontent.com/JNF63vC9DLy5aOsxHVdcLhuSjF3S1575f55yx1yd1CVY-X3qng5IYt5ASZgeLT8brurAfKSW-pr_D1daNVpZpp8BhOACYLLordDlvw=w600',
@@ -446,6 +453,7 @@ export default function Moca({ backCall }) {
       chain?: string;
       contract?: string;
       tokenId?: string;
+      nftLink?:string;
       liked?: boolean;
     }[]
   >(lists);
@@ -475,7 +483,7 @@ export default function Moca({ backCall }) {
       if (likeList) {
         const likeListParse = JSON.parse(likeList) as string[];
         isLikedLists.map((el) => {
-          el.liked = likeListParse.includes(el.platformLink);
+          el.liked = likeListParse.includes(el.nftLink || el.platformLink);
           return el;
         });
         setIsLikedLists(isLikedLists);
