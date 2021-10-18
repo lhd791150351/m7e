@@ -158,7 +158,7 @@ export default function MocaCard({
     } finally {
       setLikeLoading(false);
     }
-  }, [authenticateLoading, likeLoading]);
+  }, [did, authenticateLoading, likeLoading]);
 
   return (
     <div className={cls}>
