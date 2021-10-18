@@ -109,9 +109,8 @@ const dataList = [
     twitter: ['https://twitter.com/0x13BlockBeats'],
     title: 'The Flower',
     mcp: 'https://mycryptoprofile.io/profile/@0x13blockbeats',
-    platform: 'OpenSea',
-    platformLink:
-      'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/30133713994736285132554688158522241961977932724826138760527358180941444939777?assetContractAddress=0x495f947276749ce646f68ac8c248420045cb7b5e&tokenId=30133713994736285132554688158522241961977932724826138760527358180941444939777',
+    platform: 'foundation',
+    platformLink: 'https://foundation.app/@0x13BlockBeats/~/97092',
     type: 'video',
     desc: `The Flower Generative art by Sleepy. About beauty, about love, about radiance, about dreams, about life. 花儿，Sleepy的生成艺术作品，关于美、关于爱、关于璀璨、关于梦想、关于生命。
     `,
@@ -211,10 +210,7 @@ const dataList = [
     platform: 'dropbox',
     platformLink: 'https://superrare.com/artwork-v2/ancient-gallery--28790',
     type: 'image',
-    desc: `Created for the Museum of Crypto Art curated art show entitled 'Avatar: My Metaverse' at the Hanshan Art Museum, Suzhou, China and the Shanghai Metaverse Week exhibit ‘Self Awakened: Quest for Identity’`,
-    chain: 'Ethereum',
-    contract: '0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0',
-    tokenId: '28790',
+    desc: `Ancient Gallery playfully references the Doors rock classic ‘The End’ by juxtaposing the ancient mythological idea (channeled through 60's pop rock) of choosing a mask to wear with a scene of an NFT collector selecting an avatar from his collection. There is a bit of implied violence in the piece, a subtle nod to the individual ego death when one decides to be anonymous. The collector can be seen in the foreground, walking excitedly with his new face while the old him has been severed. This piece was created for The MOCA portion of Shanghai Metaverse week. The theme for the exhibit is Self Awakened: Quest for Identity. While meditating on this idea I heard ‘The End’ come through the radio and I made the random association between the lyrics and the assignment. Can you dig it, anon?`,
   },
   {
     url: 'https://pro2-bar-s3-cdn-cf4.myportfolio.com/02c5201375c3706250b26cf840ace79c/fb4df39b-0b0f-4fed-92c0-1765a023bb84_rw_1920.png?h=ec955c528be858843356532460634b02',
@@ -336,7 +332,7 @@ const dataList = [
     title: 'Universal playground under fire',
     platform: 'superrare',
     platformLink:
-      'https://superrare.com/artwork-v2/crashing-into-motherboard---%E6%92%9E%E4%B8%8A%E4%B8%BB%E6%A9%9F%E6%9D%BF-28937',
+      'https://superrare.com/artwork-v2/universal-playground-under-fire.---%E9%81%8A%E6%A8%82%E5%A0%B4%E5%8F%97%E5%88%B0%E6%8A%A8%E6%93%8A-28943',
     type: '3d',
     desc: 'Our Awaking Self is at the doorstep. But do we open the door to let her in? 我們覺醒的自我就在門口。但我們是否打開門，讓她進來？',
     chain: 'Ethereum',

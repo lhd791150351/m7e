@@ -26,11 +26,8 @@ export default [
         name: (
           <span>
             Virtual Reception of MOCA Exhibition{' '}
-            <a
-              href="https://play.decentraland.org/?island=Iqmg&position=56%2C19&realm=marvel"
-              target="_blank"
-            >
-              @Decentraland
+            <a href="https://somniumspace.com/parcel/618" target="_blank">
+              @Somnium Space
             </a>
           </span>
         ),
@@ -117,8 +114,11 @@ export default [
         name: (
           <span>
             MOCA Meetup{' '}
-            <a href="https://somniumspace.com/parcel/618" target="_blank">
-              @Somnium Space
+            <a
+              href="https://play.decentraland.org/?island=Iqmg&position=56%2C19&realm=marvel"
+              target="_blank"
+            >
+              @Decentraland Crypto Valley Art Gallery
             </a>
           </span>
         ),
