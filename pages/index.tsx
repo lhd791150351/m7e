@@ -430,9 +430,8 @@ const Home: NextPage<Props> = ({ userAgent }) => {
                 </div>
                 <div className={styles['home-middle']}>
                   <div className={styles['home-text3']}>Self Awakened</div>
-                  <a className={styles['home-text4']} target="_blank" href="https://join.m7e.sh">
+                  <a className={styles['home-text4']} target="_blank" href="https://invite.m7e.sh">
                     <img src="/images/flower.png" className={styles.flower2} />
-                    {/* <Flower2 className={styles.flower2} /> */}
                     Quest for Metaverse Identity
                   </a>
                 </div>
