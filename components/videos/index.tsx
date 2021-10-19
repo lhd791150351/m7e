@@ -13,14 +13,9 @@ import styles from './index.module.less';
 const videoList = [
   {
     video: 'https://drive.google.com/uc?export=download&id=1oOsn6QFgPDaT2mT_xW8co1Nw1Khx3mSk',
-    title: 'Self Awakened',
-  },
-  {
-    video:
-      'https://bee-6.gateway.ethswarm.org/bzz/9c0e0d6cbda6a166ac414dc9ebb905a10951cd97fa75b6dd7c364a3aa0c9772d',
     image:
       'https://images.unsplash.com/photo-1614983646436-b3d7a8398b3f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNTU4MTkxNA&ixlib=rb-1.2.1&q=80&w=400&h=600',
-    title: 'Shanghai Metaverse Week',
+    title: 'Shanghai Metaverse Week 2021 - Self Awakened',
     description:
       'Self-sovereign identities and avatars are the prerequisites and first-class assets for people to enter the metaverse to work, live and play freely in future…',
   },
