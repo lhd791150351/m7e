@@ -76,6 +76,8 @@ import jiemiannews from '../../public/media-support/jiemiannews.png';
 import eightbit from '../../public/media-support/media1.png';
 import xiyuecaijing from '../../public/media/xiyuecaijing.png';
 import sc from '../../public/partners-logo/new/Semicolon C.png';
+import tkys from '../../public/event-support/new/tkys.png';
+import xfhk from '../../public/event-support/new/xfhk.png';
 
 import styles from './index.module.less';
 
@@ -162,6 +164,8 @@ const LIST = [
       { avatar: cesme, link: '', name: 'CESM' },
       { avatar: artgee, link: '', name: 'ArtGee' },
       { avatar: sponsors5, link: '', name: 'da Vinci' },
+      { avatar: tkys, link: '', name: 'Trend Key FILM' },
+      { avatar: xfhk, link: '', name: 'FUNTASTIC' },
     ],
   },
   {
