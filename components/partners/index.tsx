@@ -165,7 +165,7 @@ const LIST = [
       { avatar: artgee, link: '', name: 'ArtGee' },
       { avatar: sponsors5, link: '', name: 'da Vinci' },
       { avatar: tkys, link: '', name: 'Trend Key FILM' },
-      { avatar: sponsors5, link: '', name: 'FUNTASTIC' },
+      { avatar: xfhk, link: '', name: 'FUNTASTIC' },
     ],
   },
   {
