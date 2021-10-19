@@ -55,10 +55,10 @@ export default function useCurateHook(
   }, [likeLoadingState]);
 
   const authenticate = async () => {
-    if (isMobile()) {
-      Message({ content: 'For better experience, browse via your pc' });
-      throw new Error('');
-    }
+    // if (isMobile()) {
+    //   Message({ content: 'For better experience, browse via your pc' });
+    //   throw new Error('');
+    // }
 
     if (!isMetaMaskInstalled()) {
       Message({ content: 'No Metamask detected!', type: MessageTypes.Info });
