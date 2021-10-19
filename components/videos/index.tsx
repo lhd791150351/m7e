@@ -12,6 +12,10 @@ import styles from './index.module.less';
 
 const videoList = [
   {
+    video: 'https://drive.google.com/uc?export=download&id=1oOsn6QFgPDaT2mT_xW8co1Nw1Khx3mSk',
+    title: 'Self Awakened',
+  },
+  {
     video:
       'https://bee-6.gateway.ethswarm.org/bzz/9c0e0d6cbda6a166ac414dc9ebb905a10951cd97fa75b6dd7c364a3aa0c9772d',
     image:
