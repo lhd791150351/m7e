@@ -14,6 +14,11 @@ import {
   addBookmark,
 } from '../apis/ceramic';
 
+const isMetaMaskInstalled = () => {
+  const { ethereum } = window;
+  return Boolean(ethereum && ethereum.isMetaMask);
+};
+
 export default function useCurateHook(
   states: {
     did: string;
@@ -55,6 +60,11 @@ export default function useCurateHook(
       throw new Error('');
     }
 
+    if (!isMetaMaskInstalled()) {
+      Message({ content: 'No Metamask detected!', type: MessageTypes.Info });
+      throw new Error('');
+    }
+
     if (states.authenticateLoading) throw new Error('');
 
     if (states.did) return;
@@ -62,7 +72,7 @@ export default function useCurateHook(
     states.setAuthenticateLoading(true);
     try {
       initIDX();
-      Message({ content: 'Start authentication...' });
+      Message({ content: 'Start authentication...', duration: 0 });
       const web3Modal = new Web3Modal({
         network: process.env.WEB3_NETWORK,
         cacheProvider: true,
@@ -75,17 +85,21 @@ export default function useCurateHook(
       })) as Array<string>;
 
       await authenticateIDX(provider, addresses[0]);
+      document.querySelector('#dataverseMessageBox').remove();
 
       const isCollectionInit = await hasCollections();
       if (!isCollectionInit) {
-        Message({ content: 'Init your Dataverse...' });
+        Message({ content: 'Init your Dataverse...', duration: 0 });
         await initCollections();
+        document.querySelector('#dataverseMessageBox').remove();
       }
+
       const DID = getDID();
       states.setDid(DID);
       return DID;
     } catch {
       Message({ content: 'Failed Network!', type: MessageTypes.Error });
+      document.querySelector('#dataverseMessageBox').remove();
       throw new Error('');
     } finally {
       states.setAuthenticateLoading(false);
@@ -140,8 +154,8 @@ export default function useCurateHook(
         localStorage.setItem('likedList', JSON.stringify([link]));
       }
 
-      setLikeCountState((s) => s + 1);
       setLikedState(true);
+      setLikeCountState((s) => s + 1);
 
       await reportSaveNft({ chain: data.chain, token_id: data.tokenId, contract: data.contract });
 
@@ -186,17 +200,17 @@ export function useCurateCountHook(lists) {
   useEffect(() => {
     (async () => {
       const countsRep = await fetchNftCounts(lists);
-      const likeList = localStorage.getItem('likedList');
-      if (likeList) {
-        const likeListParse = JSON.parse(likeList) as string[];
-        isLikedLists.map((el) => {
-          el.liked = likeListParse.includes(el.nftLink || el.platformLink);
-          return el;
-        });
-        setIsLikedLists(isLikedLists);
-      }
       setLikeCountsRepData(countsRep.data.data);
     })();
+    const likeList = localStorage.getItem('likedList');
+    if (likeList) {
+      const likeListParse = JSON.parse(likeList) as string[];
+      isLikedLists.map((el) => {
+        el.liked = likeListParse.includes(el.nftLink || el.platformLink);
+        return el;
+      });
+      setIsLikedLists(isLikedLists);
+    }
   }, []);
   return {
     likeCountsRepData,

@@ -38,17 +38,21 @@ export default function LikeComponent({
   );
   return (
     <>
-      <img
-        src={
-          likeLoadingState
-            ? '/images/loading.svg'
-            : likedState
-            ? '/images/like_red.png'
-            : '/images/like.png'
-        }
-        className={likeStyles}
-        onClick={like}
-      ></img>
+      <div onClick={like} className={likeStyles}>
+        <img
+          src={'/images/loading.svg'}
+          style={{ display: `${likeLoadingState ? 'block' : 'none'}` }}
+        />
+        {!likeLoadingState && (
+          <>
+            <img
+              src={'/images/like_red.png'}
+              style={{ display: `${likedState ? 'block' : 'none'}` }}
+            />
+            <img src={'/images/like.png'} style={{ display: `${likedState ? 'none' : 'block'}` }} />
+          </>
+        )}
+      </div>
       <span className={numStyles}>{likeCountState}</span>
     </>
   );

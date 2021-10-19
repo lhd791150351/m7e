@@ -27,6 +27,7 @@ interface MessageProps {
   content?: any;
   did?: string;
   type?: MessageTypes;
+  delay?: boolean;
 }
 
 export const MessageComp = (props: MessageProps) => {
@@ -66,7 +67,6 @@ export const MessageComp = (props: MessageProps) => {
       (
       {props.did ? (
         <div
-          id="dataverseMessageBox"
           css={css`
             position: absolute;
             top: 0;
@@ -191,6 +191,7 @@ export const MessageComp = (props: MessageProps) => {
 
 const message = (props: MessageProps & { duration?: number }) => {
   const holder = document.createElement('div');
+  holder.setAttribute('id', 'dataverseMessageBox');
   document.body.append(holder);
   const destroy = () => {
     holder.remove();
