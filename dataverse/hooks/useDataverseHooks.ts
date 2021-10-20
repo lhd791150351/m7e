@@ -1,10 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { useCallback, useState, useEffect, Dispatch, SetStateAction } from 'react';
-import Web3Modal from 'web3modal';
 
-import { isMobile } from '../utils';
 import Message, { MessageTypes } from '../components/Message';
 import { fetchNftCounts, reportSaveNft } from '../apis/report';
+import { connectWithWeb3 } from '../apis/web3';
 import {
   authenticateIDX,
   hasCollections,
@@ -18,6 +17,12 @@ const isMetaMaskInstalled = () => {
   const { ethereum } = window;
   return Boolean(ethereum && ethereum.isMetaMask);
 };
+
+export function isMobile() {
+  return Boolean(navigator.userAgent.match(
+    /(phone|pad|pod|iphone|ipod|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|fennec|wosbrowser|browserng|webos|symbian|windows phone)/i,
+  ));
+}
 
 export default function useCurateHook(
   states: {
@@ -55,12 +60,7 @@ export default function useCurateHook(
   }, [likeLoadingState]);
 
   const authenticate = async () => {
-    // if (isMobile()) {
-    //   Message({ content: 'For better experience, browse via your pc' });
-    //   throw new Error('');
-    // }
-
-    if (!isMetaMaskInstalled()) {
+    if (!isMobile() && !isMetaMaskInstalled()) {
       Message({ content: 'No Metamask detected!', type: MessageTypes.Info });
       throw new Error('');
     }
@@ -73,17 +73,8 @@ export default function useCurateHook(
     try {
       initIDX();
       Message({ content: 'Start authentication...', duration: 0 });
-      const web3Modal = new Web3Modal({
-        network: process.env.WEB3_NETWORK,
-        cacheProvider: true,
-        disableInjectedProvider: false,
-        providerOptions: {},
-      });
-      const provider = await web3Modal.connect();
-      const addresses = (await provider.request({
-        method: 'eth_requestAccounts',
-      })) as Array<string>;
 
+      const { provider, addresses } = await connectWithWeb3(isMobile());
       await authenticateIDX(provider, addresses[0]);
       document.querySelector('#dataverseMessageBox').remove();
 
