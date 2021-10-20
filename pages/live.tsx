@@ -7,19 +7,17 @@ import styles from '../styles/index.module.less';
 
 export default function Home({ posts }) {
   const meta = {
-    title: `Waiting - ${SITE_NAME}`,
+    title: `Live - ${SITE_NAME}`,
     description: META_DESCRIPTION,
   };
 
-  const cls = classnames('main-content', 'pb-8', 'flex flex-col	', styles.container);
+  const cls = classnames('pb-8', 'flex flex-col	', styles.container);
 
   return (
     <Page meta={meta}>
-      <Layout className={cls}>
-        <main className="flex w-full flex-1 justify-center items-center	">
-          <H1 className="text-white">Live comming soon...</H1>
-        </main>
-      </Layout>
+      <main className="min-h-screen	flex w-full flex-1 justify-center items-center bg-black	">
+        <H1 className="text-white">Live comming soon...</H1>
+      </main>
     </Page>
   );
 }

@@ -50,11 +50,6 @@ export default function Page({ meta, children, className, fullViewport = false }
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `function init () {const width = document.documentElement.clientWidth;document.documentElement.style.fontSize = width / 1440 + 'px';}; init();window.addEventListener('orientationchange', init);window.addEventListener('resize', init);`,
-          }}
-        />
       </Head>
       {children}
     </div>
