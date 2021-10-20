@@ -1,10 +1,12 @@
-import React from 'react';
+/* eslint-disable no-nested-ternary */
+import React, { SetStateAction, Dispatch } from 'react';
 import classnames from 'classnames';
 import ReactPlayer from 'react-player';
 import Head from 'next/head';
 
 // import Image from 'next/image';
 import styles from './styles.module.less';
+import LikeComponent from '../../dataverse/components/LikeComponent';
 
 export interface DataItem {
   url: string;
@@ -16,6 +18,22 @@ export interface DataItem {
   type: string;
   desc: string;
   mcp?: string;
+  data: {
+    chain: string;
+    contract: string;
+    tokenId: string;
+    likeCount: string;
+    liked?: boolean;
+    nftLink?: string;
+  };
+  states: {
+    did: string;
+    authenticateLoading: boolean;
+    likeLoading: boolean;
+    setDid: Dispatch<SetStateAction<string>>;
+    setAuthenticateLoading: Dispatch<SetStateAction<boolean>>;
+    setLikeLoading: Dispatch<SetStateAction<boolean>>;
+  };
 }
 
 export default function MocaCard({
@@ -28,6 +46,8 @@ export default function MocaCard({
   platformLink,
   twitter,
   mcp,
+  data,
+  states,
 }: DataItem) {
   const cls = classnames(styles['moca-card']);
   return (
@@ -40,8 +60,13 @@ export default function MocaCard({
       </Head>
       <div className={styles.header}>
         <div className={styles.name}>{title}</div>
-        <img src="/images/like.png" className={styles.like}></img>
-        <span className={styles.num}>102</span>
+        <LikeComponent
+          platformLink={platformLink}
+          data={data}
+          states={states}
+          likeStyles={styles.like}
+          numStyles={styles.num}
+        />
       </div>
       <div className={styles.body}>
         <div className={styles.tit}>
