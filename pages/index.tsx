@@ -437,7 +437,9 @@ const Home: NextPage<Props> = ({ userAgent }) => {
                     <div className={styles['home-text1']}>Shanghai Metaverse Week</div>
                     <div className={styles['home-text2']}>10.22 - 10.28</div>
                     <Link href="/live">
-                      <a className={classnames(styles['home-text2'], 'underline')}>Live</a>
+                      <a target="_blank" className={classnames(styles['home-text2'], 'underline')}>
+                        Live
+                      </a>
                     </Link>
                   </div>
                 </div>
