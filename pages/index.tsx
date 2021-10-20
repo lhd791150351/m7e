@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+
 import MobileDetect from 'mobile-detect';
 import classnames from 'classnames';
 import { useTranslations } from 'next-intl';
@@ -162,6 +165,13 @@ const Home: NextPage<Props> = ({ userAgent }) => {
 
   return (
     <Page meta={meta} className={styles.bg}>
+      <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function init () {const width = document.documentElement.clientWidth;document.documentElement.style.fontSize = width / 1440 + 'px';}; init();window.addEventListener('orientationchange', init);window.addEventListener('resize', init);`,
+          }}
+        />
+      </Head>
       <div
         className={classnames({
           [styles.menu]: isMobile,
@@ -426,6 +436,11 @@ const Home: NextPage<Props> = ({ userAgent }) => {
                   <div className="flex flex-col items-end flex-1">
                     <div className={styles['home-text1']}>Shanghai Metaverse Week</div>
                     <div className={styles['home-text2']}>10.22 - 10.28</div>
+                    <Link href="/live">
+                      <a target="_blank" className={classnames(styles['home-text2'], 'underline')}>
+                        Live
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className={styles['home-middle']}>
