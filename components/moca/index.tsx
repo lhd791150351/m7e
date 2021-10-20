@@ -195,7 +195,7 @@ const dataList = [
     url: 'https://ipfs.pixura.io/ipfs/QmUDiLnqAQmkDyZCCEnnJx36FEiwFQtE7h6Nf9QpZ1t3Qe/Mamihlapinatapai.png',
     author: ['Milton Sanz'],
     twitter: ['https://twitter.com/miltonsanz7'],
-    title: 'Submerged',
+    title: 'Mamihlapinatapai',
     platform: 'superrare',
     platformLink: 'https://superrare.com/artwork-v2/mamihlapinatapai-26402',
     type: 'image',
