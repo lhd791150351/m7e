@@ -9,6 +9,14 @@ import avatar1 from '../../public/images/avatar1.png';
 import styles from './index.module.less';
 import { useCurateCountHook } from '../../dataverse/hooks/useDataverseHooks';
 
+const proxyUrl = 'https://allorigins.dataverse.art/raw?url=';
+
+export const imageProxy = (url: string) => `${proxyUrl}${encodeURIComponent(url)}`;
+
+// export const imageProxy = (url: string) => {
+//   return 'https://ik.imagekit.io/p/' + `${encodeURIComponent(url)}` + '?tr=n-card';
+// }
+
 const dataList = [
   {
     url: 'https://assets.foundation.app/5Y/dX/Qmbu5SDtGjmr1xhAQie46fxrCVzBhiaZ55rCSSaPHe5YdX/nft.mp4',
@@ -38,7 +46,7 @@ const dataList = [
     tokenId: '2889?1629791698866',
   },
   {
-    url: 'https://lh3.googleusercontent.com/lmKHUmch0ZY7_iFsBIGu93n1w9e_Erd9wl54j-F-WCRHqOrJaWnZtYEBoNKBD9Z4sdXFKILPWNqF5_VoPXlQUS96SCIF-6yYcrqHHA=w600',
+    url: imageProxy('https://lh3.googleusercontent.com/lmKHUmch0ZY7_iFsBIGu93n1w9e_Erd9wl54j-F-WCRHqOrJaWnZtYEBoNKBD9Z4sdXFKILPWNqF5_VoPXlQUS96SCIF-6yYcrqHHA=w600'),
     author: ['metaSynth'],
     twitter: ['https://twitter.com/meta_Synth'],
     title: 'Time Currents',
@@ -132,7 +140,7 @@ const dataList = [
     tokenId: '5',
   },
   {
-    url: 'https://lh3.googleusercontent.com/pNys7eUxGkJpUcVwiE5mf_xy8m8a9DRcRtdpV7ixscTaDTgfj9AONnETwM1tAwT9ujX-Ls7N99Q4zTejRKnGnEubVZ4OUMa2Xp0XWA=w600',
+    url: imageProxy('https://lh3.googleusercontent.com/pNys7eUxGkJpUcVwiE5mf_xy8m8a9DRcRtdpV7ixscTaDTgfj9AONnETwM1tAwT9ujX-Ls7N99Q4zTejRKnGnEubVZ4OUMa2Xp0XWA=w600'),
     author: ['Tonran'],
     twitter: ['https://twitter.com/Tonran1'],
     title: 'Children of space',
@@ -176,7 +184,7 @@ const dataList = [
     tokenId: '72346',
   },
   {
-    url: 'https://ipfs.pixura.io/ipfs/QmdU2YNW1coTtxHYEqC93LCrdHuPXPrDqKYDEwe6e84eyg/176FINAL.png',
+    url: imageProxy('https://ipfs.pixura.io/ipfs/QmdU2YNW1coTtxHYEqC93LCrdHuPXPrDqKYDEwe6e84eyg/176FINAL.png'),
     author: ['Facu'],
     twitter: ['https://twitter.com/fakito__'],
     title: 'SOÑAR DESPIERTO ',
@@ -189,7 +197,7 @@ const dataList = [
     tokenId: '27345',
   },
   {
-    url: 'https://lh3.googleusercontent.com/sRxWbdZmYYI4MR1qnLfhDjIUIgl6WjCwG4nIuck7q3_VB3dgtdERNFOGtbqXwvhisdglq6FENxdHLOhi07csIoPz7ZZr3hC5P6xdag',
+    url: imageProxy('https://lh3.googleusercontent.com/sRxWbdZmYYI4MR1qnLfhDjIUIgl6WjCwG4nIuck7q3_VB3dgtdERNFOGtbqXwvhisdglq6FENxdHLOhi07csIoPz7ZZr3hC5P6xdag'),
     author: ['Jay Delay'],
     twitter: ['https://twitter.com/Jay_Delay'],
     title: 'Reptile Style',
@@ -230,7 +238,7 @@ const dataList = [
     nftLink: 'https://opensea.io/assets/0xf6680e700394e7fdc1edc8d57653f507a4192931/96',
   },
   {
-    url: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcY4U81n3zdY3SbYi4QfUfBKqbPJIU1_P4-CuNVniRcw_d6w',
+    url: imageProxy('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcY4U81n3zdY3SbYi4QfUfBKqbPJIU1_P4-CuNVniRcw_d6w'),
     author: ['Milton Sanz'],
     twitter: ['https://twitter.com/miltonsanz7'],
     title: 'Submerged',
@@ -243,7 +251,7 @@ const dataList = [
     tokenId: '27100',
   },
   {
-    url: 'https://ipfs.pixura.io/ipfs/QmUDiLnqAQmkDyZCCEnnJx36FEiwFQtE7h6Nf9QpZ1t3Qe/Mamihlapinatapai.png',
+    url: imageProxy('https://ipfs.pixura.io/ipfs/QmUDiLnqAQmkDyZCCEnnJx36FEiwFQtE7h6Nf9QpZ1t3Qe/Mamihlapinatapai.png'),
     author: ['Milton Sanz'],
     twitter: ['https://twitter.com/miltonsanz7'],
     title: 'Submerged',
@@ -256,7 +264,7 @@ const dataList = [
     tokenId: '26402',
   },
   {
-    url: 'https://ipfs.pixura.io/ipfs/QmR52y7dSwB16G4DyVyG4FmYJ9fd2gmqqj9Xza3ZKP48kn/Overthinking.gif',
+    url: imageProxy('https://ipfs.pixura.io/ipfs/QmR52y7dSwB16G4DyVyG4FmYJ9fd2gmqqj9Xza3ZKP48kn/Overthinking.gif'),
     author: ['Skygolpe'],
     twitter: ['https://twitter.com/skygolpe'],
     title: 'Overthinking',
@@ -347,7 +355,7 @@ const dataList = [
     tokenId: '28943',
   },
   {
-    url: 'https://lh3.googleusercontent.com/JNF63vC9DLy5aOsxHVdcLhuSjF3S1575f55yx1yd1CVY-X3qng5IYt5ASZgeLT8brurAfKSW-pr_D1daNVpZpp8BhOACYLLordDlvw=w600',
+    url: imageProxy('https://lh3.googleusercontent.com/JNF63vC9DLy5aOsxHVdcLhuSjF3S1575f55yx1yd1CVY-X3qng5IYt5ASZgeLT8brurAfKSW-pr_D1daNVpZpp8BhOACYLLordDlvw=w600'),
     author: ['LuluxXX', 'Riniifish'],
     twitter: ['https://twitter.com/luluixixix', 'https://twitter.com/riniifish'],
     title: '闯入元宇宙世界的女孩',
@@ -389,7 +397,7 @@ const dataList = [
     This is a collaboration piece created by Debbie H Digital and Reva for Metaverse exhibition. Debbie's portrait and the geometric background of Reva have well balanced together and achieved to make a great depth and intricacy. The image of the portrait helped to balance the detailed effects of Reva's moving parts.¸
     `,
     chain: 'Ethereum',
-    contract: '0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756/72341',
+    contract: '0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756',
     tokenId: '72341',
   },
 ];
