@@ -88,7 +88,7 @@ export const MessageComp = (props: MessageProps) => {
               display: flex;
               align-items: center;
               justify-content: center;
-              width: 440px;
+              max-width: 440px;
               height: 90px;
               margin: auto;
               background-image: url('/images/messageBG.png');
@@ -97,6 +97,32 @@ export const MessageComp = (props: MessageProps) => {
               background-size: 100% 100%;
               border-radius: 8px;
               animation: ${animate} 0.3s linear;
+              @media (max-width: 440px) {
+                margin: auto 20px;
+                > div {
+                  font-size: 16px;
+                }
+                @media (max-width: 400px) {
+                  > div {
+                    font-size: 15px;
+                  }
+                }
+                @media (max-width: 360px) {
+                  > div {
+                    font-size: 14px;
+                  }
+                }
+                @media (max-width: 340px) {
+                  > div {
+                    font-size: 13px;
+                  }
+                }
+                @media (max-width: 320px) {
+                  > div {
+                    font-size: 12px;
+                  }
+                }
+              }
             `}
             onClick={(e) => e.stopPropagation()}
           >
