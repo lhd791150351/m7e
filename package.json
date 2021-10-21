@@ -14,7 +14,7 @@
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty",
     "lint:prettier": "prettier --check --end-of-line auto",
     "lint:style": "stylelint  --fix",
-    "ci": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore && stylelint ./**/*.css ./**/*.less &&  prettier '**/*.{js,jsx,less,md,json}' --check --ignore-path .gitignore"
+    "ci": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore && stylelint ./**/*.css ./**/*.less &&  prettier '**/*.{js,jsx,less,md,json}' --check --ignore-path .eslintignore"
   },
   "husky": {
     "hooks": {
