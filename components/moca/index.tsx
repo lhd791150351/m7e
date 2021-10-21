@@ -46,7 +46,9 @@ const dataList = [
     tokenId: '2889?1629791698866',
   },
   {
-    url: imageProxy('https://lh3.googleusercontent.com/lmKHUmch0ZY7_iFsBIGu93n1w9e_Erd9wl54j-F-WCRHqOrJaWnZtYEBoNKBD9Z4sdXFKILPWNqF5_VoPXlQUS96SCIF-6yYcrqHHA=w600'),
+    url: imageProxy(
+      'https://lh3.googleusercontent.com/lmKHUmch0ZY7_iFsBIGu93n1w9e_Erd9wl54j-F-WCRHqOrJaWnZtYEBoNKBD9Z4sdXFKILPWNqF5_VoPXlQUS96SCIF-6yYcrqHHA=w600',
+    ),
     author: ['metaSynth'],
     twitter: ['https://twitter.com/meta_Synth'],
     title: 'Time Currents',
@@ -140,7 +142,9 @@ const dataList = [
     tokenId: '5',
   },
   {
-    url: imageProxy('https://lh3.googleusercontent.com/pNys7eUxGkJpUcVwiE5mf_xy8m8a9DRcRtdpV7ixscTaDTgfj9AONnETwM1tAwT9ujX-Ls7N99Q4zTejRKnGnEubVZ4OUMa2Xp0XWA=w600'),
+    url: imageProxy(
+      'https://lh3.googleusercontent.com/pNys7eUxGkJpUcVwiE5mf_xy8m8a9DRcRtdpV7ixscTaDTgfj9AONnETwM1tAwT9ujX-Ls7N99Q4zTejRKnGnEubVZ4OUMa2Xp0XWA=w600',
+    ),
     author: ['Tonran'],
     twitter: ['https://twitter.com/Tonran1'],
     title: 'Children of space',
@@ -184,7 +188,9 @@ const dataList = [
     tokenId: '72346',
   },
   {
-    url: imageProxy('https://ipfs.pixura.io/ipfs/QmdU2YNW1coTtxHYEqC93LCrdHuPXPrDqKYDEwe6e84eyg/176FINAL.png'),
+    url: imageProxy(
+      'https://ipfs.pixura.io/ipfs/QmdU2YNW1coTtxHYEqC93LCrdHuPXPrDqKYDEwe6e84eyg/176FINAL.png',
+    ),
     author: ['Facu'],
     twitter: ['https://twitter.com/fakito__'],
     title: 'SOÑAR DESPIERTO ',
@@ -197,7 +203,9 @@ const dataList = [
     tokenId: '27345',
   },
   {
-    url: imageProxy('https://lh3.googleusercontent.com/sRxWbdZmYYI4MR1qnLfhDjIUIgl6WjCwG4nIuck7q3_VB3dgtdERNFOGtbqXwvhisdglq6FENxdHLOhi07csIoPz7ZZr3hC5P6xdag'),
+    url: imageProxy(
+      'https://lh3.googleusercontent.com/sRxWbdZmYYI4MR1qnLfhDjIUIgl6WjCwG4nIuck7q3_VB3dgtdERNFOGtbqXwvhisdglq6FENxdHLOhi07csIoPz7ZZr3hC5P6xdag',
+    ),
     author: ['Jay Delay'],
     twitter: ['https://twitter.com/Jay_Delay'],
     title: 'Reptile Style',
@@ -238,7 +246,9 @@ const dataList = [
     nftLink: 'https://opensea.io/assets/0xf6680e700394e7fdc1edc8d57653f507a4192931/96',
   },
   {
-    url: imageProxy('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcY4U81n3zdY3SbYi4QfUfBKqbPJIU1_P4-CuNVniRcw_d6w'),
+    url: imageProxy(
+      'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcY4U81n3zdY3SbYi4QfUfBKqbPJIU1_P4-CuNVniRcw_d6w',
+    ),
     author: ['Milton Sanz'],
     twitter: ['https://twitter.com/miltonsanz7'],
     title: 'Submerged',
@@ -251,7 +261,9 @@ const dataList = [
     tokenId: '27100',
   },
   {
-    url: imageProxy('https://ipfs.pixura.io/ipfs/QmUDiLnqAQmkDyZCCEnnJx36FEiwFQtE7h6Nf9QpZ1t3Qe/Mamihlapinatapai.png'),
+    url: imageProxy(
+      'https://ipfs.pixura.io/ipfs/QmUDiLnqAQmkDyZCCEnnJx36FEiwFQtE7h6Nf9QpZ1t3Qe/Mamihlapinatapai.png',
+    ),
     author: ['Milton Sanz'],
     twitter: ['https://twitter.com/miltonsanz7'],
     title: 'Mamihlapinatapai',
@@ -264,7 +276,9 @@ const dataList = [
     tokenId: '26402',
   },
   {
-    url: imageProxy('https://ipfs.pixura.io/ipfs/QmR52y7dSwB16G4DyVyG4FmYJ9fd2gmqqj9Xza3ZKP48kn/Overthinking.gif'),
+    url: imageProxy(
+      'https://ipfs.pixura.io/ipfs/QmR52y7dSwB16G4DyVyG4FmYJ9fd2gmqqj9Xza3ZKP48kn/Overthinking.gif',
+    ),
     author: ['Skygolpe'],
     twitter: ['https://twitter.com/skygolpe'],
     title: 'Overthinking',
@@ -355,7 +369,9 @@ const dataList = [
     tokenId: '28943',
   },
   {
-    url: imageProxy('https://lh3.googleusercontent.com/JNF63vC9DLy5aOsxHVdcLhuSjF3S1575f55yx1yd1CVY-X3qng5IYt5ASZgeLT8brurAfKSW-pr_D1daNVpZpp8BhOACYLLordDlvw=w600'),
+    url: imageProxy(
+      'https://lh3.googleusercontent.com/JNF63vC9DLy5aOsxHVdcLhuSjF3S1575f55yx1yd1CVY-X3qng5IYt5ASZgeLT8brurAfKSW-pr_D1daNVpZpp8BhOACYLLordDlvw=w600',
+    ),
     author: ['LuluxXX', 'Riniifish'],
     twitter: ['https://twitter.com/luluixixix', 'https://twitter.com/riniifish'],
     title: '闯入元宇宙世界的女孩',
@@ -402,39 +418,6 @@ const dataList = [
   },
 ];
 
-const generText = (n) => {
-  const list = [];
-  for (let i = 0; i < n; i = i + 1) {
-    list.push({
-      desc: `Time Currents is created amid musings: life unfolds itself in a patterned manner, yet we
-      hold the power to choose how to ride waves of time. The pixels, which represent time units,
-      are liquified and reborn into new shades and shapes.`.slice(0, Math.random() * 300),
-      title: 'title',
-      author: ['author'],
-      twitter: ['baidu.com'],
-      platform: 'plat',
-      platformLink: 'baidu.com',
-      type: 'img',
-      url: avatar1,
-    });
-    list.push({
-      desc: `Time Currents is created amid musings: life unfolds itself in a patterned manner, yet we
-      hold the power to choose how to ride waves of time. The pixels, which represent time units,
-      are liquified and reborn into new shades and shapes.`.slice(0, Math.random() * 300),
-      title: 'title',
-      author: ['author1', 'author2'],
-      twitter: ['baidu.com', 'bing.com'],
-      platform: 'plat',
-      platformLink: 'baidu.com',
-      type: 'img',
-      url: avatar1,
-    });
-  }
-  list.sort((a, b) => {
-    return a.desc.length - b.desc.length;
-  });
-  return list;
-};
 const lists = dataList; // generText(20);
 
 export default function Moca({ backCall }) {
@@ -474,12 +457,14 @@ export default function Moca({ backCall }) {
               <img src="/images/Vector.png" />
             </div>
             <div className={styles.cn}>MOCA 展：自我的觉醒</div>
-            {/* <div className={styles.back} onClick={backCall}>
-              <span className={styles.name}>metaverse exhibition</span>
+            <div className={styles.back} onClick={backCall}>
+              <a href="http://somniumspace.com/parcel/618" target="_blank" className={styles.name}>
+                metaverse exhibition
+              </a>
               <div className={styles.ic}>
                 <img src="/images/arrow.png"></img>
               </div>
-            </div> */}
+            </div>
           </div>
           <div className={styles.list}>
             <div
