@@ -17,7 +17,7 @@ export default function Home() {
     <Page meta={meta}>
       <main className="min-h-screen	flex flex-col w-full flex-1 justify-center items-center bg-black py-8	">
         <H3 className="text-white fonts-kumar-one text-center">
-          Self Awakened Opening Forum Live{' '}
+          Opening Forum Live: Quest for Metaverse Identity
         </H3>
         <div className={styles.live}>
           <ReactPlayer
