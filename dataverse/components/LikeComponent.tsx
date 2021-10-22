@@ -46,10 +46,10 @@ export default function LikeComponent({
         {!likeLoadingState && (
           <>
             <img
-              src={'/images/like_red.png'}
+              src={'/images/like2_red.png'}
               style={{ display: `${likedState ? 'block' : 'none'}` }}
             />
-            <img src={'/images/like.png'} style={{ display: `${likedState ? 'none' : 'block'}` }} />
+            <img src={'/images/like2.png'} style={{ display: `${likedState ? 'none' : 'block'}` }} />
           </>
         )}
       </div>
