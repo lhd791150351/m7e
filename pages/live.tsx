@@ -47,7 +47,7 @@ export default function Home() {
               <QRCode value="https://live.bilibili.com/22322865" size={80} />
             </div>
             <a
-              className="underline text-white mt-2 fonts-anonymous-pro"
+              className="underline text-white mt-2 fonts-anonymous-pro hover:text-white"
               href="https://live.bilibili.com/22322865"
               target="_blank"
             >
@@ -70,7 +70,7 @@ export default function Home() {
               />
             </div>
             <a
-              className="underline text-white mt-2 fonts-anonymous-pro"
+              className="underline text-white mt-2 fonts-anonymous-pro hover:text-white"
               href="https://app.binance.com/en/qr/dplk50ddd92d21e24bfbb1f266062a4b1617"
               target="_blank"
             >
@@ -93,7 +93,7 @@ export default function Home() {
               />
             </div>
             <a
-              className="underline text-white mt-2 fonts-anonymous-pro"
+              className="underline text-white mt-2 fonts-anonymous-pro hover:text-white"
               href="https://play.decentraland.org/?position=65%2C15&realm=fenrir-amber"
               target="_blank"
             >
