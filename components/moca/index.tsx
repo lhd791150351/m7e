@@ -47,14 +47,14 @@ const dataList = [
   },
   {
     url: imageProxy(
-      'https://lh3.googleusercontent.com/lmKHUmch0ZY7_iFsBIGu93n1w9e_Erd9wl54j-F-WCRHqOrJaWnZtYEBoNKBD9Z4sdXFKILPWNqF5_VoPXlQUS96SCIF-6yYcrqHHA=w600',
+      'https://res.cloudinary.com/asynchronous-art-inc/image/upload/art/7fb7ea744d1d35bc50d56e1cf567e95c/QmQfFiYKDNe2WuFXL8GvK2i5VVV8LSQme4TfZ9CzVzP8Zm.jpg',
     ),
     author: ['metaSynth'],
     twitter: ['https://twitter.com/meta_Synth'],
     title: 'Time Currents',
-    platform: 'OpenSea',
+    platform: 'async',
     platformLink:
-      'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/92854960588464254555946828023973119272598955986146577935146406044824070258689/',
+      'https://async.art/art/master/0xb6dae651468e9593e4581705a09c10a76ac1e0c8-4002?1634862349431',
     type: 'image',
     desc: 'Time Currents is created amid musings: life unfolds itself in a patterned manner, yet we hold the power to choose how to ride waves of time. The pixels, which represent time units, are liquified and reborn into new shapes and shades.',
     chain: 'Ethereum',
