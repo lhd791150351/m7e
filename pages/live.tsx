@@ -28,10 +28,10 @@ export default function Home() {
             playing
           />
         </div>
-
+        {/* 
         <div className="fonts-anonymous-pro text-white text-center my-2">
           *The QR code address below will be updated before the live broadcast.
-        </div>
+        </div> */}
 
         <div className="w-full flex main-content mt-10 justify-center items-center">
           <div className="flex flex-col justify-center items-center px-4">
@@ -48,7 +48,7 @@ export default function Home() {
             </div>
             <a
               className="underline text-white mt-2 fonts-anonymous-pro"
-              href="https://www.bilibili.com/"
+              href="https://live.bilibili.com/22322865"
               target="_blank"
             >
               Bilibili
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
             <a
               className="underline text-white mt-2 fonts-anonymous-pro"
-              href="https://www.bilibili.com/"
+              href="https://app.binance.com/en/qr/dplk50ddd92d21e24bfbb1f266062a4b1617"
               target="_blank"
             >
               Binance
