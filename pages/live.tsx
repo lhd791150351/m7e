@@ -44,7 +44,7 @@ export default function Home() {
                 marginBottom: 4,
               }}
             >
-              <QRCode value="https://m7e.sh/live" size={80} />
+              <QRCode value="https://live.bilibili.com/22322865" size={80} />
             </div>
             <a
               className="underline text-white mt-2 fonts-anonymous-pro"
@@ -64,7 +64,10 @@ export default function Home() {
                 marginBottom: 4,
               }}
             >
-              <QRCode value="https://m7e.sh/live" size={80} />
+              <QRCode
+                value="https://app.binance.com/en/qr/dplk50ddd92d21e24bfbb1f266062a4b1617"
+                size={80}
+              />
             </div>
             <a
               className="underline text-white mt-2 fonts-anonymous-pro"
@@ -84,7 +87,10 @@ export default function Home() {
                 marginBottom: 4,
               }}
             >
-              <QRCode value="https://m7e.sh/live" size={80} />
+              <QRCode
+                value="https://play.decentraland.org/?position=65%2C15&realm=fenrir-amber"
+                size={80}
+              />
             </div>
             <a
               className="underline text-white mt-2 fonts-anonymous-pro"
