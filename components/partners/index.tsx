@@ -51,7 +51,6 @@ import support17 from '../../public/event-support/new/unnamed17.png';
 import support18 from '../../public/event-support/new/unnamed18.png';
 import omarblack from '../../public/event-support/new/omarblack.png';
 import blockvita from '../../public/event-support/new/blockvita.png';
-import dg from '../../public/event-support/new/dg.png';
 import cryptomondays from '../../public/event-support/new/cryptomondays.jpeg';
 import tianmo from '../../public/event-support/new/tianmo.png';
 import metacat from '../../public/partners-logo/new/metacat.png';
@@ -147,7 +146,6 @@ const LIST = [
   {
     title: 'Metaverse Support',
     list: [
-      { avatar: dg, link: '', name: 'Decentral Games' },
       { avatar: sponsors11, link: '', name: 'MetaV' },
       { avatar: metaestate, link: '', name: 'MetaEstate' },
       { avatar: support15, link: '', name: 'Sandbox' },
