@@ -25,6 +25,7 @@ export default function Home() {
             width="100%"
             height="100%"
             controls
+            playing
           />
         </div>
 
@@ -87,7 +88,7 @@ export default function Home() {
             </div>
             <a
               className="underline text-white mt-2 fonts-anonymous-pro"
-              href="https://www.bilibili.com/"
+              href="https://play.decentraland.org/?position=65%2C15&realm=fenrir-amber"
               target="_blank"
             >
               Decentraland
