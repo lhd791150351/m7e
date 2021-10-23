@@ -21,7 +21,7 @@ export default function Home() {
         </H3>
         <div className={styles.live}>
           <ReactPlayer
-            url="https://p6.weizan.cn/1728012600/098378722845116130/live.m3u8"
+            url="https://d1--cn-gotcha103.bilivideo.com/live-bvc/237526/live_34471451_88711622.m3u8?cdn=cn-gotcha03&expires=1634976865&len=0&oi=663775148&pt=h5&qn=10000&trid=1003fa848d4c4863458d822d9f526ac347cc&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=4ee893ce4b994f6d9695b80a0dfa6893&ptype=0&src=5&sl=1&sk=7fe1b6594a78962f62bae8bd6af61321&order=1"
             width="100%"
             height="100%"
             controls
@@ -54,7 +54,7 @@ export default function Home() {
               Bilibili
             </a>
           </div>
-          <div className="flex flex-col justify-center items-center px-4">
+          {/* <div className="flex flex-col justify-center items-center px-4">
             <div
               style={{
                 backgroundColor: '#fff',
@@ -76,8 +76,8 @@ export default function Home() {
             >
               Binance
             </a>
-          </div>
-          <div className="flex flex-col justify-center items-center px-4">
+          </div> */}
+          {/* <div className="flex flex-col justify-center items-center px-4">
             <div
               style={{
                 backgroundColor: '#fff',
@@ -99,7 +99,7 @@ export default function Home() {
             >
               Decentraland
             </a>
-          </div>
+          </div> */}
         </div>
       </main>
     </Page>

@@ -58,8 +58,8 @@ const dataList = [
     type: 'image',
     desc: 'Time Currents is created amid musings: life unfolds itself in a patterned manner, yet we hold the power to choose how to ride waves of time. The pixels, which represent time units, are liquified and reborn into new shapes and shades.',
     chain: 'Ethereum',
-    contract: '0x495f947276749ce646f68ac8c248420045cb7b5e',
-    tokenId: '92854960588464254555946828023973119272598955986146577935146406044824070258689',
+    contract: '0xb6dae651468e9593e4581705a09c10a76ac1e0c8',
+    tokenId: '4002?1634862349431',
   },
   {
     url: 'https://storage.opensea.io/files/e27358c503e08a6b9896782a4761b3c2.mp4#t=0.001',
