@@ -54,7 +54,7 @@ export default function Home() {
               Bilibili
             </a>
           </div>
-          <div className="flex flex-col justify-center items-center px-4">
+          {/* <div className="flex flex-col justify-center items-center px-4">
             <div
               style={{
                 backgroundColor: '#fff',
@@ -76,8 +76,8 @@ export default function Home() {
             >
               Binance
             </a>
-          </div>
-          <div className="flex flex-col justify-center items-center px-4">
+          </div> */}
+          {/* <div className="flex flex-col justify-center items-center px-4">
             <div
               style={{
                 backgroundColor: '#fff',
@@ -99,7 +99,7 @@ export default function Home() {
             >
               Decentraland
             </a>
-          </div>
+          </div> */}
         </div>
       </main>
     </Page>
