@@ -21,7 +21,7 @@ export default function Home() {
         </H3>
         <div className={styles.live}>
           <ReactPlayer
-            url="https://d1--cn-gotcha103.bilivideo.com/live-bvc/930261/live_34471451_88711622.m3u8?cdn=cn-gotcha03&expires=1635045718&len=0&oi=975563120&pt=h5&qn=10000&trid=100377c228b96a4a4be29369827276ed6bc3&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=cf00ebe226a1d31dbd0df018aa072745&ptype=0&src=5&sl=1&sk=04c87816ccbd36f47373ba3eae4d48b1&order=1"
+            url="https://d1--cn-gotcha103.bilivideo.com/live-bvc/924661/live_34471451_88711622.m3u8?cdn=cn-gotcha03&expires=1635062799&len=0&oi=975563120&pt=h5&qn=150&trid=10035d791f0930fd4932b4df55d07300c72b&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=d009538c22072d25211ebf4b8bbd6276&ptype=0&src=5&sl=1&sk=2935686d6cb9146c7a6a6a0b4e120e2594e074fa0760377f1a7a2b2fa0ee6443&order=1"
             width="100%"
             height="100%"
             controls
