@@ -17,11 +17,11 @@ export default function Home() {
     <Page meta={meta}>
       <main className="min-h-screen	flex flex-col w-full flex-1 justify-center items-center bg-black py-8	">
         <H3 className="text-white fonts-kumar-one text-center">
-          Opening Forum Live: Quest for Metaverse Identity
+          Closing Party: Quest for Metaverse Identity
         </H3>
         <div className={styles.live}>
           <ReactPlayer
-            url="https://d1--cn-gotcha103.bilivideo.com/live-bvc/102527/live_34471451_88711622.m3u8?cdn=cn-gotcha03&expires=1635065302&len=0&oi=975563120&pt=h5&qn=150&trid=10039117af2144ea46dd81ce94bd7222b8ed&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=f5d57c66754582a24365e8d04031a06d&ptype=0&src=5&sl=1&sk=2935686d6cb9146c7a6a6a0b4e120e2594e074fa0760377f1a7a2b2fa0ee6443&order=1"
+            url="https://live.nft4metaverse.io"
             width="100%"
             height="100%"
             controls
