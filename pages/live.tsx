@@ -54,6 +54,26 @@ export default function Home() {
               Bilibili
             </a>
           </div>
+          <div className="flex flex-col justify-center items-center px-4">
+            <div
+              style={{
+                backgroundColor: '#fff',
+                padding: 2,
+                height: 84,
+                width: 84,
+                marginBottom: 4,
+              }}
+            >
+              <QRCode value="https://youtube.nft4metaverse.io" size={80} />
+            </div>
+            <a
+              className="underline text-white mt-2 fonts-anonymous-pro hover:text-white"
+              href="https://youtube.nft4metaverse.io"
+              target="_blank"
+            >
+              Youtube
+            </a>
+          </div>
           {/* <div className="flex flex-col justify-center items-center px-4">
             <div
               style={{
