@@ -23,26 +23,28 @@ import defineLogo from '../public/hunt/define.png';
 import mocaLogo from '../public/hunt/moca.png';
 import m360Logo from '../public/hunt/m360.png';
 import imkeyLogo from '../public/hunt/imkey.png';
+import innovationLogo from '../public/hunt/innovation.png';
 
 import { SITE_NAME, META_DESCRIPTION } from '../common/const';
 
 const LIST = [
   {
-    title: 'Main Host',
+    title: 'Host',
     list: [
       { avatar: imtokenLogo, link: 'https://token.im/', name: 'imToken' },
       { avatar: polygonStudioLogo, link: 'https://polygonstudios.com/', name: 'Polygon Studios' },
     ],
   },
   {
-    title: 'Host Support',
+    title: 'Co-host',
     list: [
       { avatar: defineLogo, name: 'DeFine', link: 'https://www.de-fine.art' },
       { avatar: tezosLogo, link: 'https://tezos.com/', name: 'Tezos' },
       { avatar: imkeyLogo, link: 'https://imkey.im/', name: 'imKey' },
       { avatar: utuLogo, link: 'https://utu.one/', name: 'UTU.ONE' },
-      { avatar: harmonyLogo, link: 'https://www.harmony.one', name: 'Harmony' },
       { avatar: m360Logo, link: '', name: 'M360' },
+      { avatar: innovationLogo, link: '', name: 'Innovation+ Art' },
+      { avatar: harmonyLogo, link: 'https://www.harmony.one', name: 'Harmony' },
       { avatar: mocaLogo, link: 'https://museumofcryptoart.com/', name: 'MOCA' },
     ],
   },
@@ -113,6 +115,11 @@ export default function NFTNYC({ huntRank }: Props) {
     <Page meta={meta} className="bg-black">
       <main className="min-h-screen	flex flex-col w-full flex-1 bg-black	main-content sm:pt-20 pt-10">
         <div className="text-3xl text-white fonts-kumar-one sm:text-5xl mb-2 text-center sm:text-left">
+          <span>NFT.NYC</span>
+          <span className="sm:inline block"> + </span>
+          <span>Shanghai Metaverse Week</span>
+        </div>
+        <div className="text-3xl text-white fonts-kumar-one sm:text-5xl mb-2 text-center sm:text-left">
           Twin-City Treasure Hunt
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
@@ -144,25 +151,8 @@ export default function NFTNYC({ huntRank }: Props) {
         </div>
 
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
-          Reward rules
+          Rewards
         </div>
-        <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">
-          Participant Rewards
-        </div>
-        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          Pass to the Polygon Studios, Private Breakfast and Define venue in New York and M50 in
-          Shanghai
-        </div>
-        <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">
-          Top 50 winners
-        </div>
-        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          1) imToken Blue NFT limited Edition 1
-        </div>
-        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          2) imToken HQ free tour in Decentraland
-        </div>
-
         <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">
           Top 10 winners
         </div>
@@ -181,8 +171,24 @@ export default function NFTNYC({ huntRank }: Props) {
           4) M7E DAO NFT
         </div>
 
+        <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">
+          Top 50 winners
+        </div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
+          1) imToken Blue NFT limited Edition 1
+        </div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
+          2) imToken HQ free tour in Decentraland
+        </div>
+
+        <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">Participant</div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
+          Pass to the Polygon Studios, Private Breakfast and Define venue in New York and M50 in
+          Shanghai
+        </div>
+
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
-          Claiming rewards
+          How to claim
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
           Contact us at{' '}
@@ -198,7 +204,7 @@ export default function NFTNYC({ huntRank }: Props) {
 
         <section className="flex flex-1 flex-col items-center mt-4">
           <div className="text-white my-10 text-2xl sm:text-4xl text-center fonts-kumar-one ">
-            TREASURE HUNT LEADER BOARD
+            LEADER BOARD
           </div>
           <div className="max-w-2xl w-full">
             {data.map((hunt, idx) => (

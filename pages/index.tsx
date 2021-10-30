@@ -428,16 +428,34 @@ const Home: NextPage<Props> = ({ userAgent }) => {
               <div className="flex flex-col justify-between flex-grow">
                 <div className={styles['home-top']}>
                   <HomeBg className={styles.homeBg} />
-                  <div className={styles['home-button']} onClick={onClaim}>
+                  <div className={styles['home-button']}>
                     {/* {data.address ? 'Airdrop' : 'Connect'} */}
-                    Airdrop
+                    <a target="_blank" href="/nyc" className="underline hover:underline">
+                      TREASURE HUNT
+                    </a>
                   </div>
                   <Flower1 className={styles.flower1} />
                   <div className="flex flex-col items-end flex-1">
                     <div className={styles['home-text1']}>Shanghai Metaverse Week</div>
                     <div className={styles['home-text2']}>10.22 - 10.28</div>
+                    <div className={styles['home-text1']}>
+                      <a href="/nyc" target="_blank" className="underline hover:underline">
+                        Twin-City Treasure Hunt
+                      </a>
+                    </div>
+                    <div className={styles['home-text2']}>
+                      <a href="/nyc" target="_blank" className="underline hover:underline">
+                        11.2 - 11.8
+                      </a>
+                    </div>
                     <Link href="/live">
-                      <a target="_blank" className={classnames(styles['home-text2'], 'underline')}>
+                      <a
+                        target="_blank"
+                        className={classnames(
+                          styles['home-text2'],
+                          'underline mt-6 hover:underline',
+                        )}
+                      >
                         Live
                       </a>
                     </Link>
@@ -461,8 +479,8 @@ const Home: NextPage<Props> = ({ userAgent }) => {
                 }}
               >
                 Powered by{' '}
-                <a href="http://nft4metaverse.io/" className="underline">
-                  NFT4Metaverse
+                <a href="https://twitter.com/m7e_io" className="underline">
+                  M7e
                 </a>
               </div>
               <div className={styles['home-bottom']}>

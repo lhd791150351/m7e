@@ -39,7 +39,7 @@ export default function Footer() {
             <img src="/images/discord.png" />
           </a>
           <a
-            href="mailto://contact@m7e.io"
+            href="mailto:contact@m7e.io"
             target="_blank"
             className="w-8 h-8 bg-white rounded-full justify-center items-center flex"
           >
