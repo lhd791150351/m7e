@@ -129,6 +129,16 @@ export default function NFTNYC({ huntRank }: Props) {
           Shanghai: Nov 5th 18pm (UTC+8) to Nov 8th 18pm (UTC+8)
         </div>
 
+        <div className="mt-10 sm:text-left text-center">
+          <a
+            href="https://www.eventbrite.com/e/twin-city-nycshanghai-treasure-hunt-competition-tickets-201317525137?ref=m7e"
+            target="_blank"
+            className="button font-roboto font-semibold"
+          >
+            Register
+          </a>
+        </div>
+
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-2xl sm:text-4xl text-center sm:text-left">
           How to play
         </div>
