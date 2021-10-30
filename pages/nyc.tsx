@@ -267,7 +267,9 @@ export default function NFTNYC({ huntRank }: Props) {
           })}
         </section>
 
-        <img src="/hunt/utu-passport-compressed.png" className="mt-10" />
+        <a href="https://utu.one" target="_blank">
+          <img src="/hunt/utu-passport-compressed.png" className="mt-10" />
+        </a>
 
         <section className="block flex-1 flex-col bg-pink-500 rounded-2xl px-6 py-6 mt-10">
           <div className="sm:text-2xl text-xl text-white font-roboto font-semibold">
