@@ -111,8 +111,8 @@ export default function NFTNYC({ huntRank }: Props) {
   console.log(page, totalPage, data, nextPage);
   return (
     <Page meta={meta} className="bg-black">
-      <main className="min-h-screen	flex flex-col w-full flex-1 bg-black pt-8	main-content">
-        <div className="text-3xl text-white fonts-kumar-one sm:text-5xl">
+      <main className="min-h-screen	flex flex-col w-full flex-1 bg-black	main-content sm:pt-20 pt-10">
+        <div className="text-3xl text-white fonts-kumar-one sm:text-5xl mb-2 text-center sm:text-left">
           Twin-City Treasure Hunt
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
@@ -122,7 +122,7 @@ export default function NFTNYC({ huntRank }: Props) {
           Shanghai: Nov 5th 18pm (UTC+8) to Nov 8th 18pm (UTC+8)
         </div>
 
-        <div className="text-white fonts-kumar-one mt-10 mb-4 text-2xl sm:text-4xl">
+        <div className="text-white fonts-kumar-one mt-10 mb-4 text-2xl sm:text-4xl text-center sm:text-left">
           How to play
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
@@ -143,7 +143,7 @@ export default function NFTNYC({ huntRank }: Props) {
           winners at 11.9th
         </div>
 
-        <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl">
+        <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
           Reward rules
         </div>
         <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">
@@ -181,7 +181,7 @@ export default function NFTNYC({ huntRank }: Props) {
           4) M7E DAO NFT
         </div>
 
-        <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl">
+        <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
           Claiming rewards
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
@@ -197,7 +197,7 @@ export default function NFTNYC({ huntRank }: Props) {
         </div>
 
         <section className="flex flex-1 flex-col items-center mt-4">
-          <div className="text-white my-10 text-2xl sm:text-4xl text-center font-roboto font-semibold ">
+          <div className="text-white my-10 text-2xl sm:text-4xl text-center fonts-kumar-one ">
             TREASURE HUNT LEADER BOARD
           </div>
           <div className="max-w-2xl w-full">
