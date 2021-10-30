@@ -115,11 +115,15 @@ export default function NFTNYC({ huntRank }: Props) {
     <Page meta={meta} className="bg-black">
       <main className="min-h-screen	flex flex-col w-full flex-1 bg-black	main-content sm:pt-20 pt-10">
         <div className="text-3xl text-white fonts-kumar-one sm:text-5xl mb-2 text-center sm:text-left">
-          <span>NFT.NYC</span>
+          <a href="https://www.nft.nyc/" target="_blank" className="underline">
+            NFT.NYC
+          </a>
           <span className="sm:inline block"> + </span>
-          <span>Shanghai Metaverse Week</span>
+          <a href="https://m7e.io/" target="_blank" className="underline">
+            Shanghai Metaverse Week
+          </a>
         </div>
-        <div className="text-3xl text-white fonts-kumar-one sm:text-5xl mb-2 text-center sm:text-left">
+        <div className="text-3xl text-white fonts-kumar-one sm:text-5xl mb-2 text-center sm:text-left mt-4">
           Twin-City Treasure Hunt
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
@@ -147,17 +151,21 @@ export default function NFTNYC({ huntRank }: Props) {
           <a href="https://link.ovr.ai/social" target="_blank" className="underline">
             OVR
           </a>
-          , check around the NYC NFT/Shanghai M50 venue, collect treasures around Manhatthan（will
-          specify hunt area in OVR app）
+          ,check around the venue of NYC.NFT & Shanghai Metaverse Week, collect treasures around
+          Manhattan New York City and Downtown Shanghai (the hunt area will be specified in OVR
+          app）
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
-          2）The winners who collect the most treasures wins，total treausure is around 2000 in each
-          city, check m7e.io/nyc to see the winners on time.
+          2）Anyone who collects the most treasures wins, total treasure is around 2000 in each
+          city, visit m7e.io/nyc to check out the winners leaderboard.
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
-          3）Two cities have same time period to collect treasure and the treasures are randomly
-          distributed，we will select final winners from both cities at 11.8th，then send rewards to
-          winners at 11.9th
+          3）Participants in the two cities of NYC and Shanghai have the same time period to collect
+          treasures that are randomly distributed.
+        </div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
+          4）We will select final winners from both cities by Nov 8th and send rewards to winners on
+          Nov 9th.
         </div>
 
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
@@ -170,14 +178,12 @@ export default function NFTNYC({ huntRank }: Props) {
           1) imKey hardwallet
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          {' '}
           2) Share $1100 USD reward（$500 worth ETH/$500 worth $DFA/$100 worth XTZ)
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          3) DeFine Special NFT{' '}
+          3) DeFine Special NFT
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          {' '}
           4) M7E DAO NFT
         </div>
 
@@ -193,8 +199,8 @@ export default function NFTNYC({ huntRank }: Props) {
 
         <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">Participant</div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          Pass to the Polygon Studios, Private Breakfast and Define venue in New York and M50 in
-          Shanghai
+          Pass to the Polygon Studios, Private Breakfast and Define venue in New York, and Tickets
+          to RED Exhibition in Innovation+ Space M50 Shanghai
         </div>
 
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
@@ -209,7 +215,7 @@ export default function NFTNYC({ huntRank }: Props) {
           <a href="https://link.ovr.ai/social" target="_blank" className="underline">
             OVR
           </a>{' '}
-          ID/Name and provide your wallet address, we will reward you at November 9th 2021.
+          ID/Name and provide your wallet address, we will send you the reward on November 9th 2021.
         </div>
 
         <section className="flex flex-1 flex-col items-center mt-4">
