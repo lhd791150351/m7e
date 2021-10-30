@@ -1,21 +1,51 @@
 import React from 'react';
-import { useTranslations } from 'next-intl';
+
+import m7eLogo from '../../public/images/m7e.png';
+import test from '../../public/hunt/m7e.png';
 
 export default function Footer() {
-  const t = useTranslations('meta');
-
+  console.log(m7eLogo);
   return (
-    <footer className="w-gray h-60 bg-black flex text-white flex items-center	">
-      <div className="main-content">
+    <footer className="py-10 bg-black flex text-white items-center relative">
+      <div className="flex flex-1 sm:flex-row flex-col sm:items-center">
         <div className="flex items-center">
-          {/* <img className="w-20 h-20 mr-4" src="/images/logo.png" /> */}
+          <div className="sm:w-16 sm:h-16 w-12 h-12 mr-4">
+            <img className="mr-4" src="/images/m7e.png" alt="logo" />
+          </div>
+
           <section className="flex flex-col	h-full">
-            <span className="text-lg">{t('sub-title')}</span>
-            <span className="text-gray-200 text-sm mt-4">
-              Copyright © {`${new Date().getFullYear()} `} NFT4Metaverse Inc. All rights reserved.
+            <span className="sm:text-xl text-sm font-roboto">
+              Metaverse can't be built without NFTs.
+            </span>
+            <span className="text-gray-200 sm:text-sm text-xs mt-2 font-roboto font-light">
+              Copyright © {`${new Date().getFullYear()} `}{' '}
+              <a href="https://m7e.io" target="_blank" className="underline">
+                M7e
+              </a>
+              . All rights reserved.
             </span>
           </section>
         </div>
+
+        <section className="flex flex-1 sm:justify-end justify-center mt-4 sm:mt-0">
+          <a href="https://twitter.com/m7e_io" target="_blank" className="w-8 h-8 mr-4">
+            <img src="/images/twitter-logo.png" />
+          </a>
+          <a
+            href="https://discord.com/invite/wXtj2UuedP"
+            target="_blank"
+            className="w-8 h-8 bg-white rounded-full mr-4 justify-center items-center flex"
+          >
+            <img src="/images/discord.png" />
+          </a>
+          <a
+            href="mailto://contact@m7e.io"
+            target="_blank"
+            className="w-8 h-8 bg-white rounded-full justify-center items-center flex"
+          >
+            <img src="/images/email.png" className="w-6 h-6" />
+          </a>
+        </section>
       </div>
     </footer>
   );

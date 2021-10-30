@@ -16,7 +16,7 @@ export default function Card({ link, avatar, name, cnName, className, ...props }
   const cls = classnames(styles['speaker-card'], className);
   if (link) {
     return (
-      <a href={link} {...props} className={cls}>
+      <a href={link} target="_blank" {...props} className={classnames(cls, 'underline')}>
         <div className={styles.bg1}>
           <LogoBg className={styles['bg1-img']} />
           <div className={styles['avatar-box']}>

@@ -21,7 +21,7 @@ export default function Home() {
         </H3>
         <div className={styles.live}>
           <ReactPlayer
-            url="https://live.nft4metaverse.io"
+            url="https://live.nft4metaverse.io/test.m3u8"
             width="100%"
             height="100%"
             controls
