@@ -200,7 +200,7 @@ export default function NFTNYC({ huntRank }: Props) {
         <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">Participant</div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
           Pass to the Polygon Studios, Private Breakfast and Define venue in New York, and Tickets
-          to RED Exhibition in Innovation+ Space M50 Shanghai
+          to RED Exhibition in Innovation+ Space M50 Shanghai.
         </div>
 
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
@@ -211,7 +211,7 @@ export default function NFTNYC({ huntRank }: Props) {
           <a href="https://discord.gg/5PjHmR7CwU" target="_blank" className="underline">
             discord
           </a>{' '}
-          to get all rewards information
+          to get all rewards information.
         </div>
         <div className="mt-10 sm:text-left text-center">
           <a
