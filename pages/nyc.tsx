@@ -207,23 +207,19 @@ export default function NFTNYC({ huntRank }: Props) {
           How to claim
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
-          Contact us at{' '}
+          Join
           <a href="https://discord.gg/5PjHmR7CwU" target="_blank" className="underline">
-            M7e DAO Discord
-          </a>{' '}
-          to share your{' '}
-          <a href="https://link.ovr.ai/social" target="_blank" className="underline">
-            OVR
-          </a>{' '}
-          ID/Name and provide your wallet address, we will send you the reward on November 9th 2021.
+            discord
+          </a>
+          to get all rewards information
         </div>
         <div className="mt-10 sm:text-left text-center">
           <a
-            href="https://forms.gle/JEdCbDXWf669fe5d6"
+            href="https://discord.gg/5PjHmR7CwU"
             target="_blank"
             className="button font-roboto font-semibold"
           >
-            Claim rewards
+            JOIN DISCORD
           </a>
         </div>
 
