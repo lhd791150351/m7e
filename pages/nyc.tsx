@@ -207,10 +207,10 @@ export default function NFTNYC({ huntRank }: Props) {
           How to claim
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
-          Join
+          Join{' '}
           <a href="https://discord.gg/5PjHmR7CwU" target="_blank" className="underline">
             discord
-          </a>
+          </a>{' '}
           to get all rewards information
         </div>
         <div className="mt-10 sm:text-left text-center">
