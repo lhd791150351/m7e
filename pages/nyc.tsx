@@ -217,6 +217,15 @@ export default function NFTNYC({ huntRank }: Props) {
           </a>{' '}
           ID/Name and provide your wallet address, we will send you the reward on November 9th 2021.
         </div>
+        <div className="mt-10 sm:text-left text-center">
+          <a
+            href="https://forms.gle/JEdCbDXWf669fe5d6"
+            target="_blank"
+            className="button font-roboto font-semibold"
+          >
+            Claim rewards
+          </a>
+        </div>
 
         <section className="flex flex-1 flex-col items-center mt-4">
           <div className="text-white my-10 text-2xl sm:text-4xl text-center fonts-kumar-one ">
