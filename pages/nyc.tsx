@@ -156,8 +156,8 @@ export default function NFTNYC({ huntRank }: Props) {
           app）
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
-          2）Anyone who collects the most treasures wins, total treasure is around 2000 in each
-          city, visit m7e.io/nyc to check out the winners leaderboard.
+          2）Anyone who collects the most treasures wins, visit m7e.io/nyc to check out the winners
+          leaderboard.
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
           3）Participants in the two cities of NYC and Shanghai have the same time period to collect
