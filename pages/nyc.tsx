@@ -105,7 +105,7 @@ export default function NFTNYC({ huntRank }: Props) {
   }, [initData]);
 
   React.useEffect(() => {
-    // loopFetchHuntRank();
+    loopFetchHuntRank();
   }, [null]);
 
   const { page, totalPage, data, nextPage } = usePage(initData);
@@ -301,15 +301,15 @@ export default function NFTNYC({ huntRank }: Props) {
 }
 
 export async function getServerSideProps() {
-  // const data = await getHuntRank();
-  const data = [
-    {
-      user_uuid: 'test',
-      user_name: 'Not started',
-      user_pic: '',
-      value: 0,
-    },
-  ];
+  const data = await getHuntRank();
+  // const data = [
+  //   {
+  //     user_uuid: 'test',
+  //     user_name: 'Not started',
+  //     user_pic: '',
+  //     value: 0,
+  //   },
+  // ];
   return {
     props: {
       huntRank: data || [],

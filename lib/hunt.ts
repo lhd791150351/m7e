@@ -3,7 +3,7 @@ require('isomorphic-fetch');
 export default async function getHuntRank() {
   try {
     const res = await fetch(
-      'https://pws.ovr.ai/collectible/ranks?collectible_id=b900e8be-1a30-11ec-b4a4-95e100f927f0',
+      'https://pws.ovr.ai/collectible/ranks?collectible_id=708cc2b0-3803-11ec-90d8-d36c70a26309',
     );
 
     const data = await res.json();
