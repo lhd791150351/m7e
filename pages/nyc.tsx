@@ -217,6 +217,13 @@ export default function NFTNYC({ huntRank }: Props) {
           </a>{' '}
           for more info.
         </div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
+          3) Take a selfie of your treasure hunting journey and Twitter it{' '}
+          <a target="_blank" className="underline" href="https://twitter.com/Polygon_Asia">
+            (@Polygon_Asia)
+          </a>
+          . One lucky winner will get $200 Matic.
+        </div>
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
           How to claim
         </div>
