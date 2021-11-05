@@ -105,7 +105,7 @@ export default function NFTNYC({ huntRank }: Props) {
   }, [initData]);
 
   React.useEffect(() => {
-    loopFetchHuntRank();
+    // loopFetchHuntRank();
   }, [null]);
 
   const { page, totalPage, data, nextPage } = usePage(initData);
@@ -244,7 +244,7 @@ export default function NFTNYC({ huntRank }: Props) {
           </a>
         </div>
 
-        <section className="flex flex-1 flex-col items-center mt-4">
+        {/* <section className="flex flex-1 flex-col items-center mt-4">
           <div className="text-white my-10 text-2xl sm:text-4xl text-center fonts-kumar-one ">
             LEADER BOARD
           </div>
@@ -267,7 +267,7 @@ export default function NFTNYC({ huntRank }: Props) {
               </span>
             )}
           </div>
-        </section>
+        </section> */}
 
         <section>
           {LIST.map((item) => {
