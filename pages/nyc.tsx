@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import classnames from 'classnames';
+import ReactPlayer from 'react-player';
 
 import getHuntRank from '../lib/hunt';
 
@@ -24,6 +26,12 @@ import mocaLogo from '../public/hunt/moca.png';
 import m360Logo from '../public/hunt/m360.png';
 import imkeyLogo from '../public/hunt/imkey.png';
 import innovationLogo from '../public/hunt/innovation.png';
+
+import cube1 from '../public/hunt/1.png';
+import cube2 from '../public/hunt/2.png';
+import cube3 from '../public/hunt/3.png';
+import cube4 from '../public/hunt/4.png';
+import imageIntro from '../public/hunt/image-intro.jpg';
 
 import { SITE_NAME, META_DESCRIPTION } from '../common/const';
 
@@ -110,7 +118,6 @@ export default function NFTNYC({ huntRank }: Props) {
 
   const { page, totalPage, data, nextPage } = usePage(initData);
 
-  console.log(page, totalPage, data, nextPage);
   return (
     <Page meta={meta} className="bg-black">
       <main className="min-h-screen	flex flex-col w-full flex-1 bg-black	main-content sm:pt-20 pt-10">
@@ -146,6 +153,15 @@ export default function NFTNYC({ huntRank }: Props) {
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-2xl sm:text-4xl text-center sm:text-left">
           How to play
         </div>
+        <div className="text-white fonts-anonymous-pro my-2 grid sm:grid-cols-4 grid grid-cols-2 gap-4">
+          <Image src={cube1} />
+          <Image src={cube2} />
+          <Image src={cube3} />
+          <Image src={cube4} />
+        </div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-lg text-sm italic text-center">
+          *Please collect the above treasures.
+        </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
           1）Download{' '}
           <a href="https://link.ovr.ai/social" target="_blank" className="underline">
@@ -168,6 +184,17 @@ export default function NFTNYC({ huntRank }: Props) {
           Nov 9th.
         </div>
 
+        {/* image intro */}
+        <div className="text-center my-2 px-2 py-2">
+          <Image src={imageIntro} />
+          {/* <ReactPlayer
+              url="https://live.nft4metaverse.io/test.m3u8"
+              width="100%"
+              height="100%"
+              controls
+              playing
+            /> */}
+        </div>
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
           Rewards
         </div>
