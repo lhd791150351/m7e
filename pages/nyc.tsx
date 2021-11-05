@@ -91,7 +91,7 @@ export default function NFTNYC({ huntRank }: Props) {
   const [initData, setInitData] = React.useState(huntRank);
 
   const updateHuntRank = React.useCallback(async () => {
-    const data = await getHuntRank();
+    const data = await (await fetch('/api/hunt')).json();
 
     setInitData(data);
   }, []);
