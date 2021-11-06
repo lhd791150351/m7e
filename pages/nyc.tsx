@@ -113,7 +113,7 @@ export default function NFTNYC({ huntRank }: Props) {
   }, [initData]);
 
   React.useEffect(() => {
-    // loopFetchHuntRank();
+    loopFetchHuntRank();
   }, [null]);
 
   const { page, totalPage, data, nextPage } = usePage(initData);
@@ -185,15 +185,11 @@ export default function NFTNYC({ huntRank }: Props) {
         </div>
 
         {/* image intro */}
-        <div className="text-center my-2 px-2 py-2">
-          <Image src={imageIntro} />
-          {/* <ReactPlayer
-              url="https://live.nft4metaverse.io/test.m3u8"
-              width="100%"
-              height="100%"
-              controls
-              playing
-            /> */}
+        <div
+          className="text-center px-2 py-2 flex justify-center max-w-7xl"
+          style={{ margin: '0.5rem auto' }}
+        >
+          <ReactPlayer url="/hunt/video-intro.mp4" width="100%" height="100%" controls playing />
         </div>
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
           Rewards
@@ -271,7 +267,7 @@ export default function NFTNYC({ huntRank }: Props) {
           </a>
         </div>
 
-        {/* <section className="flex flex-1 flex-col items-center mt-4">
+        <section className="flex flex-1 flex-col items-center mt-4">
           <div className="text-white my-10 text-2xl sm:text-4xl text-center fonts-kumar-one ">
             LEADER BOARD
           </div>
@@ -294,7 +290,7 @@ export default function NFTNYC({ huntRank }: Props) {
               </span>
             )}
           </div>
-        </section> */}
+        </section>
 
         <section>
           {LIST.map((item) => {
