@@ -17,7 +17,7 @@ export default function Home() {
     <Page meta={meta}>
       <main className="min-h-screen	flex flex-col w-full flex-1 justify-center items-center bg-black py-8	">
         <H3 className="text-white fonts-kumar-one text-center">
-          Closing Party: Quest for Metaverse Identity
+          How to merge the world of NFTs with DeFi
         </H3>
         <div className={styles.live}>
           <ReactPlayer
@@ -74,7 +74,7 @@ export default function Home() {
               Youtube
             </a>
           </div>
-          {/* <div className="flex flex-col justify-center items-center px-4">
+          <div className="flex flex-col justify-center items-center px-4">
             <div
               style={{
                 backgroundColor: '#fff',
@@ -85,18 +85,18 @@ export default function Home() {
               }}
             >
               <QRCode
-                value="https://app.binance.com/en/qr/dplk50ddd92d21e24bfbb1f266062a4b1617"
+                value="https://www.binance.com/en/qr/dplk09b1b76bb079479abbf4b7fa3b40a607"
                 size={80}
               />
             </div>
             <a
               className="underline text-white mt-2 fonts-anonymous-pro hover:text-white"
-              href="https://app.binance.com/en/qr/dplk50ddd92d21e24bfbb1f266062a4b1617"
+              href="https://www.binance.com/en/qr/dplk09b1b76bb079479abbf4b7fa3b40a607"
               target="_blank"
             >
               Binance
             </a>
-          </div> */}
+          </div>
           {/* <div className="flex flex-col justify-center items-center px-4">
             <div
               style={{
