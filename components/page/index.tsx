@@ -40,8 +40,8 @@ export default function Page({ meta, children, className, fullViewport = false }
         <link rel="shortcut icon" href="/favicon.ico" />
 
         <meta name="twitter:card" content={meta.image ? 'summary_large_image' : 'summary'} />
-        <meta name="twitter:site" content="@NFT4Metaverse" />
-        <meta name="twitter:creator" content={meta.primary_author || 'NFT4Metaverse'} />
+        <meta name="twitter:site" content="m7e.io" />
+        <meta name="twitter:creator" content={meta.primary_author || '@M7e_io'} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />

@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import classnames from 'classnames';
+import ReactPlayer from 'react-player';
 
 import getHuntRank from '../lib/hunt';
 
@@ -24,6 +26,12 @@ import mocaLogo from '../public/hunt/moca.png';
 import m360Logo from '../public/hunt/m360.png';
 import imkeyLogo from '../public/hunt/imkey.png';
 import innovationLogo from '../public/hunt/innovation.png';
+
+import cube1 from '../public/hunt/1.png';
+import cube2 from '../public/hunt/2.png';
+import cube3 from '../public/hunt/3.png';
+import cube4 from '../public/hunt/4.png';
+import imageIntro from '../public/hunt/image-intro.jpg';
 
 import { SITE_NAME, META_DESCRIPTION } from '../common/const';
 
@@ -91,7 +99,7 @@ export default function NFTNYC({ huntRank }: Props) {
   const [initData, setInitData] = React.useState(huntRank);
 
   const updateHuntRank = React.useCallback(async () => {
-    const data = await getHuntRank();
+    const data = await (await fetch('/api/hunt')).json();
 
     setInitData(data);
   }, []);
@@ -105,12 +113,11 @@ export default function NFTNYC({ huntRank }: Props) {
   }, [initData]);
 
   React.useEffect(() => {
-    // loopFetchHuntRank();
+    loopFetchHuntRank();
   }, [null]);
 
   const { page, totalPage, data, nextPage } = usePage(initData);
 
-  console.log(page, totalPage, data, nextPage);
   return (
     <Page meta={meta} className="bg-black">
       <main className="min-h-screen	flex flex-col w-full flex-1 bg-black	main-content sm:pt-20 pt-10">
@@ -146,6 +153,15 @@ export default function NFTNYC({ huntRank }: Props) {
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-2xl sm:text-4xl text-center sm:text-left">
           How to play
         </div>
+        <div className="text-white fonts-anonymous-pro my-2 grid sm:grid-cols-4 grid grid-cols-2 gap-4">
+          <Image src={cube1} />
+          <Image src={cube2} />
+          <Image src={cube3} />
+          <Image src={cube4} />
+        </div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-lg text-sm italic text-center">
+          *Please collect the above treasures.
+        </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
           1）Download{' '}
           <a href="https://link.ovr.ai/social" target="_blank" className="underline">
@@ -156,8 +172,8 @@ export default function NFTNYC({ huntRank }: Props) {
           app）
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
-          2）Anyone who collects the most treasures wins, total treasure is around 2000 in each
-          city, visit m7e.io/nyc to check out the winners leaderboard.
+          2）Anyone who collects the most treasures wins, visit m7e.io/nyc to check out the winners
+          leaderboard.
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
           3）Participants in the two cities of NYC and Shanghai have the same time period to collect
@@ -168,6 +184,13 @@ export default function NFTNYC({ huntRank }: Props) {
           Nov 9th.
         </div>
 
+        {/* image intro */}
+        <div
+          className="text-center px-2 py-2 flex justify-center max-w-7xl"
+          style={{ margin: '0.5rem auto' }}
+        >
+          <ReactPlayer url="/hunt/video-intro.mp4" width="100%" height="100%" controls playing />
+        </div>
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
           Rewards
         </div>
@@ -199,23 +222,49 @@ export default function NFTNYC({ huntRank }: Props) {
 
         <div className="text-white pl-4 mt-6 text-xl sm:text-3xl fonts-kumar-one">Participant</div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
-          Pass to the Polygon Studios, Private Breakfast and Define venue in New York, and Tickets
-          to RED Exhibition in Innovation+ Space M50 Shanghai
+          1) Pass to the Polygon Studios, Private Breakfast and Define venue in New York, and
+          Tickets to RED Exhibition in Innovation+ Space M50 Shanghai.
         </div>
-
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
+          2) Fill the google form in{' '}
+          <a href="https://discord.gg/5PjHmR7CwU" target="_blank" className="underline">
+            discord
+          </a>{' '}
+          , 100 participants can win NFT badge in{' '}
+          <a href="https://www.de-fine.art" target="_blank" className="underline">
+            DeFine platform
+          </a>{' '}
+          at Nov 9th，check{' '}
+          <a href="https://twitter.com/DeFinePlatform" target="_blank" className="underline">
+            DeFine Twitter
+          </a>{' '}
+          for more info.
+        </div>
+        <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base pl-4">
+          3) Take a selfie of your treasure hunting journey and Twitter it{' '}
+          <a target="_blank" className="underline" href="https://twitter.com/Polygon_Asia">
+            (@Polygon_Asia)
+          </a>
+          . One lucky winner will get $200 Matic.
+        </div>
         <div className="text-white fonts-kumar-one mt-10 mb-4 text-xl sm:text-4xl text-center sm:text-left">
           How to claim
         </div>
         <div className="text-white fonts-anonymous-pro mt-2 sm:text-xl text-base">
-          Contact us at{' '}
+          Join{' '}
           <a href="https://discord.gg/5PjHmR7CwU" target="_blank" className="underline">
-            M7e DAO Discord
+            discord
           </a>{' '}
-          to share your{' '}
-          <a href="https://link.ovr.ai/social" target="_blank" className="underline">
-            OVR
-          </a>{' '}
-          ID/Name and provide your wallet address, we will send you the reward on November 9th 2021.
+          to get all rewards information.
+        </div>
+        <div className="mt-10 sm:text-left text-center">
+          <a
+            href="https://discord.gg/5PjHmR7CwU"
+            target="_blank"
+            className="button font-roboto font-semibold"
+          >
+            JOIN DISCORD
+          </a>
         </div>
 
         <section className="flex flex-1 flex-col items-center mt-4">
@@ -296,15 +345,15 @@ export default function NFTNYC({ huntRank }: Props) {
 }
 
 export async function getServerSideProps() {
-  // const data = await getHuntRank();
-  const data = [
-    {
-      user_uuid: 'test',
-      user_name: 'Not started',
-      user_pic: '',
-      value: 0,
-    },
-  ];
+  const data = await getHuntRank();
+  // const data = [
+  //   {
+  //     user_uuid: 'test',
+  //     user_name: 'Not started',
+  //     user_pic: '',
+  //     value: 0,
+  //   },
+  // ];
   return {
     props: {
       huntRank: data || [],
