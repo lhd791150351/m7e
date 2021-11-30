@@ -2,13 +2,13 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 export default function SwitchLocale() {
   const t = useTranslations('locale');
 
-  const { locale, locales, route } = useRouter();
+  const { locale, locales, asPath } = useRouter();
   return (
     <div className=" text-right">
       <Menu as="div" className="relative inline-block w-28 text-left">
@@ -39,7 +39,7 @@ export default function SwitchLocale() {
                       active ? 'bg-violet-500 text-white bg-purple-500' : 'text-gray-900'
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
-                    <Link href={route} locale="zh-CN">
+                    <Link href={asPath} locale="zh-CN">
                       简体中文
                     </Link>
                   </button>
@@ -52,7 +52,7 @@ export default function SwitchLocale() {
                       active ? 'bg-violet-500 text-white bg-purple-500' : 'text-gray-900'
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
-                    <Link href={route} locale="en-US">
+                    <Link href={asPath} locale="en-US">
                       English
                     </Link>
                   </button>

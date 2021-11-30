@@ -17,8 +17,9 @@ export default function Home() {
     <Page meta={meta}>
       <main className="min-h-screen	flex flex-col w-full flex-1 justify-center items-center bg-black py-8	">
         <H3 className="text-white fonts-kumar-one text-center">
-          How to merge the world of NFTs with DeFi
+          Go to Dcentral Conference Miami with Diana
         </H3>
+        <div className="mt-4 text-white fonts-kumar-one text-center text-xl">DeFi Stage</div>
         <div className={styles.live}>
           <ReactPlayer
             url="https://live.nft4metaverse.io/test.m3u8"
@@ -32,6 +33,7 @@ export default function Home() {
         <div className="fonts-anonymous-pro text-white text-center my-2">
           *The QR code address below will be updated before the live broadcast.
         </div> */}
+        <div className="mt-4 text-white fonts-kumar-one text-center text-xl">NFT Stage</div>
 
         <div className="w-full flex main-content mt-10 justify-center items-center">
           <div className="flex flex-col justify-center items-center px-4">
