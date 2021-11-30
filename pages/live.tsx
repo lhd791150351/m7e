@@ -5,9 +5,11 @@ import QRCode from 'qrcode.react';
 import Page from '../components/page';
 import H3 from '../components/h3';
 import { SITE_NAME, META_DESCRIPTION } from '../common/const';
+import getLiveConfig from '../lib/live';
+
 import styles from '../styles/live.module.less';
 
-export default function Home() {
+export default function Home({ m3u8 }) {
   const meta = {
     title: `Live - ${SITE_NAME}`,
     description: META_DESCRIPTION,
@@ -19,21 +21,19 @@ export default function Home() {
         <H3 className="text-white fonts-kumar-one text-center">
           Go to Dcentral Conference Miami with Diana
         </H3>
-        <div className="mt-4 text-white fonts-kumar-one text-center text-xl">DeFi Stage</div>
+        <div className="mt-4 text-white fonts-kumar-one text-center text-xl">
+          DeFi Stage(UTC-5 9:00)
+        </div>
         <div className={styles.live}>
-          <ReactPlayer
-            url="https://live.nft4metaverse.io/test.m3u8"
-            width="100%"
-            height="100%"
-            controls
-            playing
-          />
+          <ReactPlayer url={m3u8} width="100%" height="100%" controls playing />
         </div>
         {/* 
         <div className="fonts-anonymous-pro text-white text-center my-2">
           *The QR code address below will be updated before the live broadcast.
         </div> */}
-        <div className="mt-4 text-white fonts-kumar-one text-center text-xl">NFT Stage</div>
+        <div className="mt-4 text-white fonts-kumar-one text-center text-xl">
+          NFT Stage(UTC-5 9:30)
+        </div>
 
         <div className="w-full flex main-content mt-10 justify-center items-center">
           <div className="flex flex-col justify-center items-center px-4">
@@ -129,6 +129,8 @@ export default function Home() {
 }
 
 export async function getServerSideProps({ locale }) {
+  const m3u8 = await getLiveConfig();
+
   return {
     props: {
       messages: {
@@ -136,6 +138,7 @@ export async function getServerSideProps({ locale }) {
         ...require(`../messages/index/${locale}.json`),
       },
       now: new Date().getTime(),
+      m3u8,
     },
   };
 }
