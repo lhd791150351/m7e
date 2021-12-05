@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_API = 'https://report.dataverse.art/dataverse/api/v1';
+const BASE_API = 'https://api.dataverse.art/v1';
 
 export async function retryRequest(requestCallback: () => Promise<any>, retryCount = 0) {
   async function executor() {
